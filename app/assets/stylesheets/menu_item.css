@@ -1,0 +1,30 @@
+.Menu-body {
+ max-width: 460px;
+ margin: 0 auto;
+}
+
+
+
+.MenuPage {
+  margin-top: 60px;
+}
+
+.MenuPage-title {
+  font-weight: 600;
+  font-size: 32px;
+  color: rgb(26, 23, 23);
+  margin-bottom: 20px;
+}
+
+.Menu-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.MenuItem-name {
+  margin-left: 10px;
+}
+
+.MenuItem-price {
+  margin-left: 10px;
+}

@@ -1,0 +1,14 @@
+<main class="MenuPage">
+  <h1 class="MenuPage-title"> Available items </h1>
+  <section class="Menu-items">
+    <ul>
+      <% MenuItem.all.each do |item| %>
+        <li class="Menu-item">
+          <input type="checkbox" class= "MenuItem-selector" >
+          <p class= "MenuItem-name"> <%= item.name%> </p>
+          <p class= "MenuItem-price"> <%= item.price%> </p>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</main>

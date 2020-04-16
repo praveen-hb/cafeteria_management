@@ -2,7 +2,7 @@
   <h1 class="MenuPage-title"> Available items </h1>
   <section class="Menu-items">
     <ul>
-      <% MenuItem.all.each do |item| %>
+      <% @menu_items.each do |item| %>
         <li class="Menu-item">
           <%= form_with(url: "/menu_items/#{item.id}", method: "PUT") do %>
          <%= check_box_tag 'selected',

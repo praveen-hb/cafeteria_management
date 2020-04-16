@@ -1,6 +1,5 @@
 <main class="MenuPage">
   <h1 class="MenuPage-title"> Available items </h1>
-
   <section class="Menu-items">
     <ul>
       <% MenuItem.all.each do |item| %>
@@ -19,7 +18,7 @@
       <% end %>
     </ul>
   </section>
-  <input class="Add-Button" type="Button" value="placeOrder">
-
-
+  <%= form_with(url: "/order_items", method: "POST",class: "AddOrder") do %>
+    <%= submit_tag "Place Order", class: "AddOrder-button"%>
+  <% end %>
 </main>

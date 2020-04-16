@@ -18,4 +18,15 @@ class MenusController < ApplicationController
     )
     redirect_to menus_path
   end
+
+  def update
+    Menu.all.each do |menu|
+      menu.Standard = false
+      menu.save!
+    end
+    menu = Menu.find_by(name: params[:Standard])
+    menu.Standard = true
+    menu.save!
+    redirect_to menus_path
+  end
 end

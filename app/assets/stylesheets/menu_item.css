@@ -3,6 +3,22 @@
  margin: 0 auto;
 }
 
+.Add-Button{
+  font-size:14px;
+  color:#FFFFFF ;
+  background-color:#48BB78 ;
+  border:1px solid transparent;
+  padding:6px 22px;
+  border-radius:4px;
+}
+
+.PlaceOrder{
+
+  height:32px;
+
+  margin-bottom: 24px;
+  margin-left:0px;
+}
 
 
 .MenuPage {

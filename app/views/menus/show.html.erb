@@ -16,7 +16,7 @@
       <%= text_field_tag 'name', nil, class: 'AddMenuItem-name', placeholder: "enter menu item" , autofocus: true%>
       <%= text_field_tag 'description', nil, class: 'AddMenuItem-description', placeholder: "enter menu description"%>
       <%= number_field_tag 'price',nil, class: "AddMenuItem-price",placeholder: "price" %>
-      <input type="hidden" name="id" value=<%= @id%>>
+      <%= hidden_field_tag 'id', @id%>
       <%= submit_tag "Add Item", class: "AddMenuItem-button"%>
     <% end %>
   </div>

@@ -5,9 +5,17 @@ class MenusController < ApplicationController
 
   def show
     @id = params[:id]
-    @menu = Menu.find(@id)
-    @name = @menu.name
-    @menu_items = @menu.menu_items.order(:id)
+    menu = Menu.find(@id)
+    @name = menu.name
+    @menu_items = menu.menu_items.order(:id)
     render "show"
+  end
+
+  def create
+    menu_name = params[:name]
+    menu = Menu.create!(
+      name: menu_name,
+    )
+    redirect_to menus_path
   end
 end

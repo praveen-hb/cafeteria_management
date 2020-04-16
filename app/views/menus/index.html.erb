@@ -10,4 +10,10 @@
       <% end %>
     </ul>
   </section>
+  <div>
+    <%= form_with(url: "/menus",method: "post",class: "AddMenu") do %>
+      <%= text_field_tag 'name', nil, class: 'AddMenu-name', placeholder: "enter menu item" , autofocus: true%>
+      <%= submit_tag "Add Menu", class: "AddMenu-button"%>
+    <% end %>
+  </div>
 </main>

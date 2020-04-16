@@ -10,4 +10,19 @@ class MenuItemsController < ApplicationController
     menu_item.save!
     redirect_to menu_items_path
   end
+
+  def create
+    menu_item_name = params[:name]
+    menu_item_price = params[:price]
+    description = params[:description]
+    id = @id
+    menu = MenuItem.create!(
+      name: menu_item_name,
+      price: menu_item_price,
+      menu_id: id,
+      description: description,
+      selected: false,
+    )
+    redirect_to menus_path
+  end
 end

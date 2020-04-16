@@ -1,0 +1,13 @@
+<main class="MenuPage">
+  <h1 class="MenuPage-title"> List of menus </h1>
+  <section class="MenuPage-items">
+    <ul>
+      <% Menu.all.each do |menu|%>
+        <li class="Menu-type">
+          <h2 class="Menu-id"> <%= menu.id%>.</h2>
+          <%= submit_tag  menu.name,class: "Menu-name",onclick: "location.href='/menus/#{menu.id}'" %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</main>

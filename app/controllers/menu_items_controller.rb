@@ -15,7 +15,7 @@ class MenuItemsController < ApplicationController
     menu_item_name = params[:name]
     menu_item_price = params[:price]
     description = params[:description]
-    id = @id
+    id = params[:id]
     menu = MenuItem.create!(
       name: menu_item_name,
       price: menu_item_price,
@@ -23,6 +23,6 @@ class MenuItemsController < ApplicationController
       description: description,
       selected: false,
     )
-    redirect_to menus_path
+    redirect_to(request.env["HTTP_REFERER"])
   end
 end

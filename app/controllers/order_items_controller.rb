@@ -4,6 +4,7 @@ class OrderItemsController < ApplicationController
     new_order = Order.create!(
       date: Date.today,
       user_id: 1,
+      delivered_at: nil,
     )
     menu_items.each do |item|
       OrderItem.create!(

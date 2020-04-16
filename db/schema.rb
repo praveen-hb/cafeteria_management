@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_064315) do
     t.string "name"
     t.string "description"
     t.integer "price"
+    t.boolean "selected"
   end
 
   create_table "menus", force: :cascade do |t|

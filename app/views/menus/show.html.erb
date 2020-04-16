@@ -1,0 +1,22 @@
+<main class="MenuPage">
+  <h1 class="MenuPage-title"> Items in <%= @name%> menu</h1>
+  <section class="Menu-items">
+    <ul>
+      <% @menu_items.each do |item| %>
+        <li class="Menu-item">
+          <p class="Menu-itemId"> <%= item.id%> </p>
+          <p class= "MenuItem-name"> <%= item.name%> </p>
+          <p class= "MenuItem-price"> <%= item.price%> </p>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <div>
+    <%= form_with(url: "/menu_items",method: "post",class: "AddMenuItem") do %>
+      <%= text_field_tag 'name', nil, class: 'AddMenuItem-name', placeholder: "enter menu item" , autofocus: true%>
+      <%= text_field_tag 'description', nil, class: 'AddMenuItem-description', placeholder: "enter menu description"%>
+      <%= number_field_tag 'price',nil, class: "AddMenuItem-price",placeholder: "price" %>
+      <%= submit_tag "Add Item", class: "AddMenuItem-button"%>
+    <% end %>
+  </div>
+</main>

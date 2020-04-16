@@ -4,7 +4,14 @@
     <ul>
       <% MenuItem.all.each do |item| %>
         <li class="Menu-item">
-          <input type="checkbox" class= "MenuItem-selector" >
+          <%= form_with(url: "/menu_items/#{item.id}", method: "PUT") do %>
+         <%= check_box_tag 'selected',
+          nil,
+          item.selected ? true : false,
+          class: "MenuItem-checkbox",
+          onclick: "this.form.submit()"
+         %>
+        <% end %>
           <p class= "MenuItem-name"> <%= item.name%> </p>
           <p class= "MenuItem-price"> <%= item.price%> </p>
         </li>

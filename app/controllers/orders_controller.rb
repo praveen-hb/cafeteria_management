@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
     order = Order.find(id)
     order.delivered_at = DateTime.now
     order.save!
-    render "tried to mark as complete"
+    #render "tried to mark as complete"
     redirect_to orders_path
   end
 end

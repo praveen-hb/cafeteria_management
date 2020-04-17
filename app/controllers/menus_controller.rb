@@ -29,4 +29,15 @@ class MenusController < ApplicationController
     menu.save!
     redirect_to menus_path
   end
+
+  def destroy
+    id = params[:id]
+    menu = Menu.find(id)
+    menu.destroy
+    menu_items = MenuItem.all.where("menu_id = ?", id)
+    menu_items.each do |item|
+      item.destroy
+    end
+    redirect_to(request.env["HTTP_REFERER"])
+  end
 end

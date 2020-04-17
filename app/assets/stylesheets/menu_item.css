@@ -12,6 +12,24 @@
   border-radius:4px;
 }
 
+.Menu-items:hover{
+  background-color: #F1EDF7;
+}
+
+
+.Menu-items:hover .MenuItem-delete {
+  visibility: visible;
+}
+
+.MenuItem-delete >img{
+  width:16px;
+}
+
+.MenuItem-delete {
+  visibility: hidden;
+  margin-left: 8px;
+}
+
 .PlaceOrder{
 
   height:32px;

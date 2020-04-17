@@ -26,4 +26,11 @@ class MenuItemsController < ApplicationController
     )
     redirect_to(request.env["HTTP_REFERER"])
   end
+
+  def destroy
+    id = params[:id]
+    menu_item = MenuItem.find(id)
+    menu_item.destroy
+    redirect_to(request.env["HTTP_REFERER"])
+  end
 end

@@ -1,6 +1,6 @@
 class MenuItemsController < ApplicationController
   def index
-    @menu_items = Menu.Standard.menu_items
+    @menu_items = Menu.Standard.menu_items.order(:id)
     render "index"
   end
 

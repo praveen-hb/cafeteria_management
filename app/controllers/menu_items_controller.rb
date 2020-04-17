@@ -1,12 +1,25 @@
 class MenuItemsController < ApplicationController
   def index
-    @menu_items = Menu.Standard.menu_items.order(:id)
+    MenuItem.store_current_items
+    @menu_items = MenuItem.get_current_items
     render "index"
   end
 
   def edit
     @id = params[:id]
     render "edit"
+  end
+
+  def cart
+    @menu_items = MenuItem.get_current_items
+    @menu_q = @menu_items.map { |item| params[item.id.to_s.to_sym] }
+    MenuItem.store_cart(@menu_q)
+    redirect_to menu_items_path
+  end
+
+  def cart_items
+    @cart = MenuItem.get_cart
+    render "cart"
   end
 
   def updation

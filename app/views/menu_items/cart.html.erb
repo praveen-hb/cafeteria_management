@@ -1,0 +1,8 @@
+<section class="Cart">
+  <h1 class="Cart-title"> Items in cart: </h1>
+  <ul class="Menu-items">
+    <% @cart.each do |menu_item| %>
+      <h1> <%= menu_item%> </h1>
+    <% end %>
+  </ul>
+</section>

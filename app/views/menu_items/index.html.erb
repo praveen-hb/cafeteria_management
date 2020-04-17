@@ -2,22 +2,21 @@
   <h1 class="MenuPage-title"> Available items </h1>
   <section class="Menu-items">
     <ul>
+    <%= form_with(url: "/menu_items/cart", method: "POST") do %>
       <% @menu_items.each do |item| %>
         <li class="Menu-item">
-          <%= form_with(url: "/menu_items/#{item.id}", method: "PUT") do %>
-         <%= check_box_tag 'selected',
-          nil,
-          item.selected ? true : false,
-          class: "MenuItem-checkbox",
-          onclick: "this.form.submit()"
-         %>
-        <% end %>
+          <%= number_field_tag item.id.to_s.to_sym,0,class: "MenuItem-quantity",min: 0%>
           <p class= "MenuItem-name"> <%= item.name%> </p>
           <p class= "MenuItem-price"> <%= item.price%> </p>
         </li>
       <% end %>
+      <%= submit_tag "Add to cart", class: "MenuItems-cart"%>
+    <% end %>
+    <%= submit_tag "My cart",onclick:"location.href='/menu_items/cart_items'"%>
     </ul>
   </section>
+
+
   <%= form_with(url: "/order_items", method: "POST",class: "AddOrder") do %>
     <%= submit_tag "Place Order", class: "AddOrder-button"%>
   <% end %>

@@ -12,6 +12,17 @@
   border-radius:4px;
 }
 
+.MenuItem-quantity {
+  width: 30px;
+}
+
+.Cart-title {
+  font-weight: 600;
+  font-size: 32px;
+  color: rgb(26, 23, 23);
+  margin-bottom: 20px;
+}
+
 .Menu-item:hover{
   background-color: #F1EDF7;
 }

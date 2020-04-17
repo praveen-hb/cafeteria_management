@@ -11,4 +11,10 @@ class OrdersController < ApplicationController
     order.save!
     redirect_to orders_path
   end
+
+  def display
+    @not_delivered_orders = Order.not_delivered_user(current_user.id)
+    @delivered_orders = Order.delivered_user(current_user.id)
+    render "orders/index"
+  end
 end

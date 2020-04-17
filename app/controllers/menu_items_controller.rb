@@ -4,6 +4,21 @@ class MenuItemsController < ApplicationController
     render "index"
   end
 
+  def edit
+    @id = params[:id]
+    render "edit"
+  end
+
+  def updation
+    id = params[:id]
+    menu_item = MenuItem.find(id)
+    menu_item.name = params[:name]
+    menu_item.price = params[:price]
+    menu_item.description = params[:description]
+    menu_item.save!
+    redirect_to(request.env["HTTP_REFERER"])
+  end
+
   def update
     selected = params[:selected]
     menu_item = MenuItem.find(params[:id])

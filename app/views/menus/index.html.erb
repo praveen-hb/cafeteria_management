@@ -6,8 +6,7 @@
         <li class="Menu-type">
           <h2 class="Menu-id"> <%= menu.id%>.</h2>
           <%= submit_tag  menu.name,class: "Menu-name",onclick: "location.href='/menus/#{menu.id}'" %>
-          <%= form_with(url: "/menus/#{menu.id}/edit",method: "get") do %>
-          <%= submit_tag "edit", class: "Menu-edit"%>
+          <%= submit_tag "edit", class: "Menu-edit" ,onclick:"location.href='/menus/#{menu.id}/edit'"%>
           <%= form_with(url: "/menus/#{menu.id}", method: "DELETE") do %>
             <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %>
           <% end %>

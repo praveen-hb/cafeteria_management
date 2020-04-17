@@ -12,12 +12,21 @@
   border-radius:4px;
 }
 
-.Menu-items:hover{
+.Menu-item:hover{
   background-color: #F1EDF7;
 }
 
 
-.Menu-items:hover .MenuItem-delete {
+.Menu-item:hover .MenuItem-delete {
+  visibility: visible;
+}
+
+.MenuItem-edit {
+  visibility: hidden;
+  margin-left: 20px;
+}
+
+.Menu-item:hover .MenuItem-edit {
   visibility: visible;
 }
 

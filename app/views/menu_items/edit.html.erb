@@ -1,0 +1,19 @@
+<section class="Menu-details">
+  <h1 class="current-details"> current details: <h1>
+  <h2> id: <%= @id %> </h2>
+  <h2> name: <%= MenuItem.find(@id).name %> </h2>
+  <h2> description: <%= MenuItem.find(@id).description %> </h2>
+  <h2> price: <%= MenuItem.find(@id).price %> </h2>
+</section>
+
+<section class="Edit-details">
+  <h1 class="edit-details "> Edit details: </h1>
+  <%= form_with(url: "/menu_items/#{@id}/update", method: "post",class: "editing") do %>
+    <%= text_field_tag "name",MenuItem.find(@id).name,class: "Edit-menuName",placeholder: "new menu item name"%>
+    <%= text_field_tag "description", MenuItem.find(@id).description,class: "Edit-menudesc",placeholder: "description"%>
+    <%= number_field_tag "price",MenuItem.find(@id).price,placeholder: "new price"%>
+    <%= hidden_field_tag "id", @id%>
+    <%= submit_tag "update"%>
+  <% end %>
+</section>
+<%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menus/#{MenuItem.find(@id).menu_id}'"%>

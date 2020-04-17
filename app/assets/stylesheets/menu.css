@@ -9,7 +9,14 @@
 .Menu-type:hover .Menu-edit {
   visibility: visible;
 }
+.Menu-type:hover .MenuItem-delete {
+  visibility: visible;
+}
 
+.MenuItem-delete {
+  visibility: hidden;
+  margin-left: 10px;
+}
 
 .Menu-edit {
   visibility: hidden;
@@ -56,4 +63,26 @@
   border: 1px solid #BFB8CC;
   border-radius: 4px;
   padding: 6px 22px;
+}
+
+
+.current-details {
+  font-weight: 600;
+  font-size: medium;
+  font-style: oblique;
+}
+
+.edit-details {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: medium;
+  font-style: oblique;
+}
+
+.editing {
+  display: flex;
+}
+
+.Back {
+  margin-top: 10px;
 }

@@ -24,6 +24,14 @@ class MenusController < ApplicationController
     render "edit"
   end
 
+  def updation
+    id = params[:id]
+    menu = Menu.find(id)
+    menu.name = params[:name]
+    menu.save!
+    redirect_to(request.env["HTTP_REFERER"])
+  end
+
   def update
     Menu.all.each do |menu|
       menu.Standard = false

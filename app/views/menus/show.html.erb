@@ -7,6 +7,7 @@
           <p class="Menu-itemId"> <%= item.id%> </p>
           <p class= "MenuItem-name"> <%= item.name%> </p>
           <p class= "MenuItem-price"> <%= item.price%> </p>
+           <%= submit_tag "edit", class: "MenuItem-edit" ,onclick:"location.href='/menu_items/#{item.id}/edit'"%>
           <%= form_with(url: "/menu_items/#{item.id}", method: "DELETE") do %>
             <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %>
           <% end %>
@@ -23,4 +24,5 @@
       <%= submit_tag "Add Item", class: "AddMenuItem-button"%>
     <% end %>
   </div>
+  <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menus'"%>
 </main>

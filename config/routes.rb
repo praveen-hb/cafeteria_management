@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :order_items
   resources :menus
   resources :users
-
+  post "/menus/:id/update" => "menus#updation"
+  post "/menu_items/:id/update" => "menu_items#updation"
   get "/signin" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions
   delete "/signout" => "sessions#destroy", as: :destroy_session

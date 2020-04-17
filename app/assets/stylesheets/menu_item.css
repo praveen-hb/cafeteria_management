@@ -77,12 +77,18 @@
 
 .MenuItem-name {
   margin-left: 10px;
+  font-size: 24px;
 }
 
 .MenuItem-price {
   margin-left: 10px;
+  font-size: 24px;
 }
 
+.MenuItem-quantity {
+  margin-left: 10px;
+  font-size: 24px;
+}
 
 .Submit-Button{
   margin-left: 10px;

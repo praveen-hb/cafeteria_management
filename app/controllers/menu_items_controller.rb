@@ -1,6 +1,5 @@
 class MenuItemsController < ApplicationController
   def index
-    MenuItem.store_current_items
     @menu_items = MenuItem.get_current_items
     render "index"
   end
@@ -13,12 +12,18 @@ class MenuItemsController < ApplicationController
   def cart
     @menu_items = MenuItem.get_current_items
     @menu_q = @menu_items.map { |item| params[item.id.to_s.to_sym] }
-    MenuItem.store_cart(@menu_q)
+    @current_user.cart = []
+    @menu_q.each do |id|
+      @current_user.cart << id
+    end
+    @current_user.save!
     redirect_to menu_items_path
   end
 
   def cart_items
-    @cart = MenuItem.get_cart
+    @menu_items = MenuItem.get_current_items
+    @menu_ids = @menu_items.map { |item| item.id }
+    @id_quantity = @menu_ids.zip(@current_user.cart)
     render "cart"
   end
 

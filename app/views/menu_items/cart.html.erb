@@ -1,8 +1,13 @@
 <section class="Cart">
   <h1 class="Cart-title"> Items in cart: </h1>
   <ul class="Menu-items">
-    <% @cart.each do |menu_item| %>
-      <h1> <%= menu_item%> </h1>
+    <% @id_quantity.each do |item,quantity| %>
+      <li class="Menu-item">
+        <h1 class="MenuItem-name"> <%= MenuItem.find(item).name%> </h1>
+        <h1 class="MenuItem-price"> <%= MenuItem.find(item).price%> </h1>
+        <h1 class="MenuItem-quantity"> <%= quantity%> </h1>
+      </li>
     <% end %>
+
   </ul>
 </section>

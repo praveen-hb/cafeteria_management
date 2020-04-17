@@ -2,18 +2,21 @@
   margin-top: 60px;
 }
 
-
 .Menu-item {
   display: flex;
   margin-bottom: 10px;
 }
 
-
-
 .AddMenuItem-button{
-  font-size:14px;
-  color:#FFFFFF ;
-  background-color:#48BB78 ;
-  border:1px solid transparent;
-  padding:6px 22px;
-  border-radius:4px;}
+  margin-top: 10px;
+  font-weight: 500;
+  margin-left: 10px;
+  font-size: medium;}
+
+  .Delivery-info{
+    font-weight: 550;
+  font-style: italic;
+  color: black;
+  margin-bottom: 15px;
+  font-size: 30px;
+  }

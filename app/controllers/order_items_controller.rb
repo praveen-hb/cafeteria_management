@@ -3,7 +3,7 @@ class OrderItemsController < ApplicationController
     menu_items = MenuItem.selected
     new_order = Order.create!(
       date: Date.today,
-      user_id: 1,
+      user_id: current_user.id,
       delivered_at: nil,
     )
     menu_items.each do |item|

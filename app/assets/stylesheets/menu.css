@@ -6,6 +6,15 @@
   background-color: #F1EDF7;
 }
 
+.Menu-Text{
+  font-weight: 600;
+  font-style: italic;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
 .Menu-type:hover .Menu-edit {
   visibility: visible;
 }
@@ -25,11 +34,11 @@
 }
 
 .MenuPage-title {
-  font-weight: 600;
+  font-weight: 550;
   font-style: italic;
   color: black;
   margin-bottom: 60px;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .Menu-type {
@@ -53,36 +62,65 @@
 
 .ActiveMenu-label {
   font-weight: 600;
-  font-size: medium;
+  font-size: 30px;
   margin-right: 10px;
+  font-style: italic;
 }
 
 .Pending-orders {
-  margin-top: 10px;
+  margin-top: 30px;
   border-radius: 4px;
   border: 1px solid #BFB8CC;
   border-radius: 4px;
   padding: 6px 22px;
+  background-color: inherit;
+  font-weight: 600;
 }
-
 
 .current-details {
   font-weight: 600;
-  font-size: medium;
+  font-size: 20px;
   font-style: oblique;
+  margin-bottom: 10px;
+}
+
+.Current-text{
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .edit-details {
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: 600;
-  font-size: medium;
+  font-size: 20px;
   font-style: oblique;
+  margin-bottom: 10px;
 }
 
-.editing {
+.Editing {
   display: flex;
 }
 
 .Back {
-  margin-top: 10px;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.AddMenu-name{
+  margin-bottom: 30px;
+}
+
+.AddMenu-button{
+  margin-bottom: 30px;
+}
+
+.AddMenuItem-name{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.AddMenuItem-price{
+  margin-bottom: 10px;
+  margin-right: 10px;
 }

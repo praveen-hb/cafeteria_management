@@ -7,6 +7,9 @@
           <p class="Menu-itemId"> <%= item.id%> </p>
           <p class= "MenuItem-name"> <%= item.name%> </p>
           <p class= "MenuItem-price"> <%= item.price%> </p>
+          <%= form_with(url: "/menu_items/#{item.id}", method: "DELETE") do %>
+            <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %>
+          <% end %>
         </li>
       <% end %>
     </ul>

@@ -2,6 +2,21 @@
   margin-top: 60px;
 }
 
+.Menu-type:hover {
+  background-color: #F1EDF7;
+}
+
+.Menu-type:hover .Menu-edit {
+  visibility: visible;
+}
+
+
+.Menu-edit {
+  visibility: hidden;
+  margin-left: 10px;
+
+}
+
 .MenuPage-title {
   font-weight: 600;
   font-style: italic;

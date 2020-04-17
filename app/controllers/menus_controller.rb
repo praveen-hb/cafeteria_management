@@ -19,6 +19,11 @@ class MenusController < ApplicationController
     redirect_to menus_path
   end
 
+  def edit
+    @id = params[:id]
+    render "edit"
+  end
+
   def update
     Menu.all.each do |menu|
       menu.Standard = false

@@ -1,11 +1,21 @@
 .Home-title {
-  font-size: 20px;
-  color: gray;
+  font-size: 64px;
+  color: black;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .Home-authenticate {
   font-size: 16px;
   margin-top: 20px;
+  font-size: 32px;
+}
+
+.Home-image {
+  width: 600px;
+  height: 300px;
 }
 
 

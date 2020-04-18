@@ -19,5 +19,11 @@
       <% end %>
     <% end %>
   </table>
+  <section class="Menu-itemsTotal">
+    <h1 class="Cart-total">  Total Cart Value: <h1>
+    <h1 class="Cart-totalValue"> <%= MenuItem.get_cart_value(@id_quantity)%>
   </ul>
+  <%= form_with(url: "/order_items", method: "POST",class: "AddOrder") do %>
+    <%= submit_tag "Place Order", class: "AddOrder-button"%>
+  <% end %>
 </section>

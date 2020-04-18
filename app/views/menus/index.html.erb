@@ -1,21 +1,9 @@
-
-
 <main class="MenuPage">
-  <p>clink the link to view
-    <%= link_to "List Of Menus", list_of_menus_path%>
+  <p>List of Menus
+    <%= link_to "click here", list_of_menus_path%>
   </p>
 
-  <p>click the link to
-    <%= link_to "Add a Menu", add_menu_path%>
-  </p>
-
-  <p>click the link to
-    <%= link_to "Change Standard Menu", change_of_standard_menu_path%>
-  </p>
-
-  <p>click the link to
-    <%= link_to "Mark the order as delivered", orders_path %>
+  <p>View Pending Orders
+    <%= link_to "click here", orders_path %>
     </p>
-
-    <%= submit_tag  "Marking Delivered",class: "Pending-orders",onclick: "location.href='/orders'" %>
 </main>

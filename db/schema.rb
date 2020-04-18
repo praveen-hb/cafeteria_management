@@ -58,4 +58,5 @@ ActiveRecord::Schema.define(version: 2020_04_18_073529) do
     t.string "role"
     t.integer "cart", default: [], array: true
   end
+
 end

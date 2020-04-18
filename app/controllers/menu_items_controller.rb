@@ -12,9 +12,16 @@ class MenuItemsController < ApplicationController
   def cart
     @menu_items = MenuItem.get_current_items
     @menu_q = @menu_items.map { |item| params[item.id.to_s.to_sym] }
-    @current_user.cart = []
-    @menu_q.each do |id|
-      @current_user.cart << id
+    if @current_user.cart == []
+      @menu_q.each do |id|
+        @current_user.cart << id.to_i
+      end
+    else
+      i = 0
+      @menu_q.each do |id|
+        @current_user.cart[i] += id.to_i
+        i += 1
+      end
     end
     @current_user.save!
     redirect_to menu_items_path

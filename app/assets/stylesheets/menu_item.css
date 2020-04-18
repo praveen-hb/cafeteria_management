@@ -10,10 +10,11 @@
   border:1px solid transparent;
   padding:6px 22px;
   border-radius:4px;
+  margin-top: 10px;
 }
 
 .MenuItem-quantity {
-  width: 30px;
+  width: 40px;
 }
 
 .Cart-title {
@@ -27,6 +28,13 @@
   background-color: #F1EDF7;
 }
 
+tr:hover {
+  background-color: #F1EDF7;
+}
+
+tr:hover .MenuItem-delete {
+  visibility: visible;
+}
 
 .Menu-item:hover .MenuItem-delete {
   visibility: visible;
@@ -48,6 +56,7 @@
 .MenuItem-delete {
   visibility: hidden;
   margin-left: 8px;
+  height: 24px;
 }
 
 .PlaceOrder{
@@ -100,7 +109,7 @@
 }
 
 .Table {
-  width: 70%;
+  width: 100%;
 }
 
 .MenuItem-quantity {

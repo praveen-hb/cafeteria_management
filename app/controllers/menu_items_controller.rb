@@ -44,13 +44,25 @@ class MenuItemsController < ApplicationController
     redirect_to(request.env["HTTP_REFERER"])
   end
 
-  #def update
-  #selected = params[:selected]
-  #menu_item = MenuItem.find(params[:id])
-  #menu_item.selected = selected
-  #menu_item.save!
-  #redirect_to menu_items_path
-  #end
+  def update
+    @menu_items = MenuItem.get_current_items
+    @menu_ids = @menu_items.map { |item| item.id }
+    i = 0
+    @menu_ids.each do |id|
+      if id == params[:id].to_i
+        if params[:op] == "del"
+          @current_user.cart[i] = 0
+        elsif params[:op] == "up"
+          @current_user.cart[i] += 1
+        else
+          @current_user.cart[i] -= 1
+        end
+      end
+      i += 1
+    end
+    @current_user.save!
+    redirect_to menu_items_cart_items_path
+  end
 
   def create
     menu_item_name = params[:name]

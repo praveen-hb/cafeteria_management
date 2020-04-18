@@ -1,29 +1,46 @@
 <section class="Cart">
   <h1 class="Cart-title"> Items in cart: </h1>
   <ul class="Menu-items">
-    <table class="Table">
-      <tr class="Table-row">
-        <th class="MenuItem-nameHead">Item-name </th>
-        <th class="MenuItem-priceHead">Item-price </th>
-        <th class="MenuItem-quantityHead">Item-quantity </th>
-      </tr>
-    <% @id_quantity.each do |item,quantity| %>
-      <% if quantity>0 %>
-      <li class="Menu-item">
-        <tr>
-          <td class="MenuItem-name"> <%= MenuItem.find(item).name%> </td>
-          <td class="MenuItem-price"> <%= MenuItem.find(item).price%> </td>
-          <td class="MenuItem-quantity"> <%= quantity%> </td>
+    <% if @current_user.cart!=[] %>
+      <table class="Table">
+        <tr class="Table-row">
+          <th class="MenuItem-nameHead">Item-name </th>
+          <th class="MenuItem-priceHead">Item-price </th>
+          <th class="MenuItem-quantityHead">Item-quantity </th>
         </tr>
-      </li>
+      <% @id_quantity.each do |item,quantity| %>
+        <% if quantity and quantity>0 %>
+        <li class="Menu-item">
+          <tr>
+            <td class="MenuItem-name"> <%= MenuItem.find(item).name%> </td>
+            <td class="MenuItem-price"> <%= MenuItem.find(item).price%> </td>
+            <td class="MenuItem-quantity"> <%= quantity%> </td>
+            <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
+              <%= hidden_field_tag "op","up"%>
+             <td> <%= image_submit_tag "/uparrow.jpeg", class: "MenuItem-delete" %> </td>
+            <% end %>
+            <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
+             <%= hidden_field_tag "op","down"%>
+             <td> <%= image_submit_tag "/downarrow.png", class: "MenuItem-delete" %> </td>
+            <% end %>
+            <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
+             <%= hidden_field_tag "op","del"%>
+             <td> <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %> </td>
+            <% end %>
+          </tr>
+        </li>
+        <% end %>
       <% end %>
+      </table>
+    <section class="Menu-itemsTotal">
+        <h1 class="Cart-total">  Total Cart Value: <h1>
+        <h1 class="Cart-totalValue"> <%= MenuItem.get_cart_value(@id_quantity)%>
+    </section>
+    </ul>
+    <%= form_with(url: "/orders", method: "POST",class: "AddOrder") do %>
+      <%= submit_tag "Place Order", class: "AddOrder-button"%>
     <% end %>
-  </table>
-  <section class="Menu-itemsTotal">
-    <h1 class="Cart-total">  Total Cart Value: <h1>
-    <h1 class="Cart-totalValue"> <%= MenuItem.get_cart_value(@id_quantity)%>
-  </ul>
-  <%= form_with(url: "/orders", method: "POST",class: "AddOrder") do %>
-    <%= submit_tag "Place Order", class: "AddOrder-button"%>
+  <% else %>
+    <h1 class= "Cart-total"> Cart is empty! Go back and add your favorite items </h1>
   <% end %>
-</section>
+  <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menu_items'"%>

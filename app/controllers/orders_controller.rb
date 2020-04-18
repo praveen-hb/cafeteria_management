@@ -4,6 +4,16 @@ class OrdersController < ApplicationController
     render "orders/show"
   end
 
+  def create
+    new_order = Order.create!(
+      date: Date.today,
+      user_id: @current_user.id,
+      delivered_at: nil,
+    )
+    new_order.save!
+    redirect_to "/order_items/#{new_order.user_id}/edit"
+  end
+
   def update
     id = params[:id]
     order = Order.find(id)

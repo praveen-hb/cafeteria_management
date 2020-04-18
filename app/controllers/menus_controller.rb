@@ -40,17 +40,33 @@ class MenusController < ApplicationController
     menu = Menu.find_by(name: params[:Standard])
     menu.Standard = true
     menu.save!
+    User.all.each do |user|
+      user.cart = []
+      user.save!
+    end
     redirect_to menus_path
   end
 
   def destroy
     id = params[:id]
     menu = Menu.find(id)
-    menu.destroy
-    menu_items = MenuItem.all.where("menu_id = ?", id)
+    menu_items = menu.menu_items
     menu_items.each do |item|
       item.destroy
     end
+    if menu.Standard
+      User.all.each do |user|
+        user.cart = []
+        user.save!
+      end
+      menu.destroy
+      temp = Menu.first
+      temp.Standard = true
+      temp.save!
+    else
+      menu.destroy
+    end
+
     redirect_to(request.env["HTTP_REFERER"])
   end
 

@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
       delivered_at: nil,
     )
     new_order.save!
-    redirect_to "/order_items/#{new_order.user_id}/edit"
+    redirect_to "/order_items/#{new_order.id}/edit"
   end
 
   def update

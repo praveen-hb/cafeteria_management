@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   get "/admin" => "admin#index", as: :admin_page
   get "/users_info" => "users#info", as: :users_info
-  get "/addmenu" => "menus#add_menu", as: :add_menu
-  get "/listofmenus" => "menus#list_of_menus", as: :list_of_menus
-  get "/changeStandardmenu" => "menus#change_standard_menu", as: :change_of_standard_menu
+  #get "/addmenu" => "menus#add_menu", as: :add_menu
+  #get "/listofmenus" => "menus#list_of_menus", as: :list_of_menus
+  #get "/changeStandardmenu" => "menus#change_standard_menu", as: :change_of_standard_menu
   post "/menus/:id/update" => "menus#updation"
   post "/menu_items/:id/update" => "menu_items#updation"
   post "/orders/display" => "orders#display"

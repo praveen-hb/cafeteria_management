@@ -54,15 +54,16 @@ class MenusController < ApplicationController
     redirect_to(request.env["HTTP_REFERER"])
   end
 
-  def list_of_menus
-    render "menus/listofmenus"
-  end
+  #def list_of_menus
+  #render "menus/listofmenus"
+  # end
 
-  def add_menu
-    render "menus/addmenu"
-  end
+  #def add_menu
+  #render "menus/addmenu"
+  #end
 
-  def change_standard_menu
-    render "menus/changeofstandardmenu"
-  end
+  #def change_standard_menu
+  #render "menus/changeofstandardmenu"
+  #end
+
 end

@@ -61,7 +61,8 @@ class MenuItemsController < ApplicationController
       i += 1
     end
     @current_user.save!
-    redirect_to menu_items_cart_items_path
+    #redirect_to menu_items_cart_items_path
+    redirect_to(request.env["HTTP_REFERER"])
   end
 
   def create

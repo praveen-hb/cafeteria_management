@@ -28,4 +28,20 @@ class UsersController < ApplicationController
     @users_clerk = User.get_clerks
     render "users/users_info"
   end
+
+  def adding_clerk_page
+    render "users/add_clerk"
+  end
+
+  def adding_clerk
+    new_user = User.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      role: "clerk",
+      password: params[:password],
+    )
+    new_user.save
+    redirect_to admin_page_path
+  end
 end

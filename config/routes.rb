@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :menus
   resources :users
 
-  #get "order_items/:id/create" => "order_items#create"
+  get "/addmenu" => "menus#add_menu", as: :add_menu
+  get "/listofmenus" => "menus#list_of_menus", as: :list_of_menus
+  get "/changeStandardmenu" => "menus#change_standard_menu", as: :change_of_standard_menu
   post "/menus/:id/update" => "menus#updation"
   post "/menu_items/:id/update" => "menu_items#updation"
   post "/orders/display" => "orders#display"

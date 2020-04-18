@@ -3,7 +3,7 @@ class OrderItemsController < ApplicationController
     @menu_items = MenuItem.get_current_items
     @menu_ids = @menu_items.map { |item| item.id }
     @id_quantity = @menu_ids.zip(@current_user.cart)
-
+    @current_user.cart.clear
     new_order = Order.create!(
       date: Date.today,
       user_id: @current_user.id,
@@ -20,6 +20,7 @@ class OrderItemsController < ApplicationController
         )
       end
     end
+
     redirect_to menu_items_path
   end
 end

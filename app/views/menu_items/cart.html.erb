@@ -1,13 +1,23 @@
 <section class="Cart">
   <h1 class="Cart-title"> Items in cart: </h1>
   <ul class="Menu-items">
+    <table class="Table">
+      <tr class="Table-row">
+        <th class="MenuItem-nameHead">Item-name </th>
+        <th class="MenuItem-priceHead">Item-price </th>
+        <th class="MenuItem-quantityHead">Item-quantity </th>
+      </tr>
     <% @id_quantity.each do |item,quantity| %>
+      <% if quantity>0 %>
       <li class="Menu-item">
-        <h1 class="MenuItem-name"> <%= MenuItem.find(item).name%> </h1>
-        <h1 class="MenuItem-price"> <%= MenuItem.find(item).price%> </h1>
-        <h1 class="MenuItem-quantity"> <%= quantity%> </h1>
+        <tr>
+          <td class="MenuItem-name"> <%= MenuItem.find(item).name%> </td>
+          <td class="MenuItem-price"> <%= MenuItem.find(item).price%> </td>
+          <td class="MenuItem-quantity"> <%= quantity%> </td>
+        </tr>
       </li>
+      <% end %>
     <% end %>
-
+  </table>
   </ul>
 </section>

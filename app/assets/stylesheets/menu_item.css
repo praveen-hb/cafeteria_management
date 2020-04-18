@@ -81,12 +81,35 @@
 }
 
 .MenuItem-price {
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 24px;
 }
 
+.MenuItem-priceHead {
+  font-size: 32px;
+  font-weight: 500;
+}
+.MenuItem-quantityHead {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.MenuItem-nameHead {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.Table {
+  width: 70%;
+  border: 1px solid black;
+}
+
+.Table-row {
+  border: 1px solid black;
+}
+
 .MenuItem-quantity {
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 24px;
 }
 

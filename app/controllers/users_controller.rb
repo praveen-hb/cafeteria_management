@@ -22,4 +22,10 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     end
   end
+
+  def info
+    @users_customer = User.get_customers
+    @users_clerk = User.get_clerks
+    render "users/users_info"
+  end
 end

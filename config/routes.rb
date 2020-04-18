@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
 
   get "/admin" => "admin#index", as: :admin_page
+  get "/users_info" => "users#info", as: :users_info
   get "/addmenu" => "menus#add_menu", as: :add_menu
   get "/listofmenus" => "menus#list_of_menus", as: :list_of_menus
   get "/changeStandardmenu" => "menus#change_standard_menu", as: :change_of_standard_menu

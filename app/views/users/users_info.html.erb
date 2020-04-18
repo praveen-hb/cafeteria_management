@@ -1,0 +1,45 @@
+<main class="MenuPage">
+  <h1 class="MenuPage-title"> Available items </h1>
+  <section class="Menu-items">
+    <ul>
+      <h1 class="MenuPage-title"> Customers </h1>
+        <% @users_customer.each do |user| %>
+          <li class="Menu-item">
+
+            <p class= "MenuItem-name"> <%= user.first_name%> <%= user.last_name%> </p>
+            <li>
+              <p class= "User-attribute-heading">
+                Role: <%=user.role%> </p>
+              </p>
+              <p class= "User-attribute-heading">
+                email: <%=user.email%> </p>
+              </p>
+            </li>
+
+          </li>
+        <% end %>
+      </ul>
+      <ul>
+      <h1 class="MenuPage-title"> Clerks </h1>
+        <% @users_clerk .each do |user| %>
+          <li class="Menu-item">
+
+            <p class= "MenuItem-name"> <%= user.first_name%> <%= user.last_name%> </p>
+            <li>
+              <p class= "User-attribute-heading">
+                Role: <%=user.role%> </p>
+              </p>
+              <p class= "User-attribute-heading">
+                email: <%=user.email%> </p>
+              </p>
+            </li>
+
+          </li>
+        <% end %>
+      </ul>
+
+
+
+
+  </section>
+</main>

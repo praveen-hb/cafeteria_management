@@ -101,11 +101,7 @@
 
 .Table {
   width: 70%;
-  border: 1px solid black;
-}
 
-.Table-row {
-  border: 1px solid black;
 }
 
 .MenuItem-quantity {
@@ -115,4 +111,26 @@
 
 .Submit-Button{
   margin-left: 10px;
+}
+
+
+.Menu-itemsTotal
+{
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.Cart-total {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.Cart-totalValue {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 800;
+  color: goldenrod;
+  margin-left: 60px;
 }

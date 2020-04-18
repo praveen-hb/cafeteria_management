@@ -1,6 +1,10 @@
 class MenusController < ApplicationController
   def index
-    render "index"
+    if current_user.role == "owner"
+      render "index"
+    else
+      render "/admin/error"
+    end
   end
 
   def show
@@ -20,8 +24,12 @@ class MenusController < ApplicationController
   end
 
   def edit
-    @id = params[:id]
-    render "edit"
+    if current_user.role != "owner"
+      render "/admin/error"
+    else
+      @id = params[:id]
+      render "edit"
+    end
   end
 
   def updation
@@ -69,17 +77,4 @@ class MenusController < ApplicationController
 
     redirect_to(request.env["HTTP_REFERER"])
   end
-
-  #def list_of_menus
-  #render "menus/listofmenus"
-  # end
-
-  #def add_menu
-  #render "menus/addmenu"
-  #end
-
-  #def change_standard_menu
-  #render "menus/changeofstandardmenu"
-  #end
-
 end

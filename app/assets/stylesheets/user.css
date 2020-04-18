@@ -35,3 +35,33 @@
   font-weight: 400;
   font-size: 15px;
 }
+
+.User-name {
+  margin-left: 10px;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.User-email {
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.User-item {
+  display: flex;
+}
+
+.User-bold {
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.User-title {
+  font-weight: 550;
+  font-style: italic;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 30px;
+}

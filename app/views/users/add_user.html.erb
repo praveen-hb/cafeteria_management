@@ -1,7 +1,7 @@
-<p class="NewUsers-title"> Add a new clerk! </p>
+<p class="NewUsers-title"> Add a new User! </p>
 
 <section class="UsersNew">
-  <%= form_with url: users_add_clerk_path do |form| %>
+  <%= form_with url: users_add_user_path do |form| %>
     <div class="Form-section">
       <p class="FormInput-label"> First name: </p>
       <%= form.text_field :first_name, class: "Form-input", autofocus: true %>

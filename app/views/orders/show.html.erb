@@ -6,7 +6,7 @@
         <li>
           <%= form_with(url: "/orders/#{order.id}", method: "PUT") do %>
             <%= order.id%>
-            <%= submit_tag "Mark as delivered1", class: "AddMenuItem-button"%>
+            <%= submit_tag "Mark as delivered", class: "AddMenuItem-button"%>
           <% end %>
         </li>
       <% end %>

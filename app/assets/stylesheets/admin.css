@@ -1,0 +1,21 @@
+.Access-error {
+  margin-bottom: 60px;
+}
+
+.Error-title {
+  font-weight: 800;
+  font-family: fantasy;
+  font-size: 40px;
+  color: black;
+  margin-bottom: 60px;
+}
+
+.Error-message {
+  font-size: 30px;
+  color: grey;
+  font-weight: 600;
+}
+
+.Error-image {
+  width: 600px;
+}

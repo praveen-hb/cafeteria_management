@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
   def index
-    @not_delivered_orders = Order.not_delivered
-    render "orders/show"
+    if current_user.role == "customer"
+      render "/admin/error"
+    else
+      @not_delivered_orders = Order.not_delivered
+      render "orders/show"
+    end
   end
 
   def create

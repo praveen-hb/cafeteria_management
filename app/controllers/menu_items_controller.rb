@@ -37,13 +37,13 @@ class MenuItemsController < ApplicationController
     redirect_to(request.env["HTTP_REFERER"])
   end
 
-  def update
-    selected = params[:selected]
-    menu_item = MenuItem.find(params[:id])
-    menu_item.selected = selected
-    menu_item.save!
-    redirect_to menu_items_path
-  end
+  #def update
+  #selected = params[:selected]
+  #menu_item = MenuItem.find(params[:id])
+  #menu_item.selected = selected
+  #menu_item.save!
+  #redirect_to menu_items_path
+  #end
 
   def create
     menu_item_name = params[:name]
@@ -55,7 +55,7 @@ class MenuItemsController < ApplicationController
       price: menu_item_price,
       menu_id: id,
       description: description,
-      selected: false,
+
     )
     redirect_to(request.env["HTTP_REFERER"])
   end

@@ -76,12 +76,24 @@ class MenuItemsController < ApplicationController
       description: description,
 
     )
+    if Menu.find(id).Standard
+      User.all.each do |user|
+        user.cart = []
+        user.save!
+      end
+    end
     redirect_to(request.env["HTTP_REFERER"])
   end
 
   def destroy
     id = params[:id]
     menu_item = MenuItem.find(id)
+    if menu_item.menu.Standard
+      User.all.each do |user|
+        user.cart = []
+        user.save!
+      end
+    end
     menu_item.destroy
     redirect_to(request.env["HTTP_REFERER"])
   end

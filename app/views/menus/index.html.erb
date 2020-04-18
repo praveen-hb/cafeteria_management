@@ -1,35 +1,21 @@
+
+
 <main class="MenuPage">
-  <h1 class="MenuPage-title"> List of menus </h1>
-  <section class="MenuPage-items">
-    <ul>
-      <% Menu.all.order(:id).each do |menu|%>
-        <li class="Menu-type">
-          <h2 class="Menu-id"> <%= menu.id%>.
-          <%= submit_tag  menu.name,class: "Menu-name",onclick: "location.href='/menus/#{menu.id}'" %></h2>
-          <%= submit_tag "edit", class: "Menu-edit" ,onclick:"location.href='/menus/#{menu.id}/edit'"%>
-          <%= form_with(url: "/menus/#{menu.id}", method: "DELETE") do %>
-            <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </section>
-  <div >
-    <p class="Menu-Text"> Add the Menu here</p>
-    <%= form_with(url: "/menus",method: "post",class: "AddMenu") do %>
-      <%= text_field_tag 'name', nil, class: 'AddMenu-name', placeholder: "enter menu item" , autofocus: true%>
-      <%= submit_tag "Add Menu", class: "AddMenu-button"%>
-    <% end %>
-  </div>
-  <div class="ChangeStadard-menu">
-    <label class= "ActiveMenu-label">Choose Standard Menu:</label>
-    <%= form_with(url: "/menus/1",method: "put") do %>
-      <%= select_tag "Standard",
-        options_for_select(Menu.all.order(:Standard).reverse.collect {|menu| menu.name}),
-        include_blank: false,
-        :onchange => "this.form.submit()"
-      %>
-    <% end %>
-  </div >
+  <p>clink the link to view
+    <%= link_to "List Of Menus", list_of_menus_path%>
+  </p>
+
+  <p>click the link to
+    <%= link_to "Add a Menu", add_menu_path%>
+  </p>
+
+  <p>click the link to
+    <%= link_to "Change Standard Menu", change_of_standard_menu_path%>
+  </p>
+
+  <p>click the link to
+    <%= link_to "Mark the order as delivered", orders_path %>
+    </p>
+
     <%= submit_tag  "Marking Delivered",class: "Pending-orders",onclick: "location.href='/orders'" %>
 </main>

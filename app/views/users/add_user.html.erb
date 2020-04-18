@@ -20,7 +20,14 @@
       <%= form.password_field :password, class: "Form-input" %>
     </div>
     <div class="Form-section">
-      <%= form.submit "create", class: "Form-submit"%>
+    <p class="FormInput-label"> role: </p>
+    <%= select_tag "role",
+        options_for_select(["customer","clerk","owner"],"customer"),
+        class: "Form-input"
+      %>
+    </div>
+    <div class="Form-section">
+      <%= form.submit "createUser", class: "Form-submit"%>
     </div>
   <% end %>
 

@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
-      role: "clerk",
+      role: params[:role],
       password: params[:password],
     )
     new_user.save!

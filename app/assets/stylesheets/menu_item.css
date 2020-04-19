@@ -76,7 +76,7 @@ tr:hover .MenuItem-delete {
   font-weight: 600;
   font-size: 32px;
   color: rgb(26, 23, 23);
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .Menu-item {
@@ -89,6 +89,14 @@ tr:hover .MenuItem-delete {
   font-size: 24px;
 }
 
+.MenuItem-descHead {
+  margin-left: 10px;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
 .MenuItem-price {
   margin-left: 20px;
   font-size: 24px;
@@ -97,20 +105,27 @@ tr:hover .MenuItem-delete {
 .MenuItem-priceHead {
   font-size: 32px;
   font-weight: 500;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .MenuItem-quantityHead {
   font-size: 32px;
   font-weight: 500;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .MenuItem-nameHead {
   font-size: 32px;
   font-weight: 500;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .Table {
   width: 100%;
 }
+
 
 .MenuItem-quantity {
   margin-left: 20px;
@@ -153,11 +168,14 @@ tr:hover .MenuItem-delete {
 
 .Carts {
   display: flex;
+  margin-top: 60px;
 }
 
 .MenuItems-cart {
-  margin-right: 100px;
+  margin-left: 150px;
+  height: 30px;
 }
+.Walk-in {
 color: darkgreen;
   margin: 0 auto;
   font-size: 24px;
@@ -165,3 +183,4 @@ color: darkgreen;
   margin: 0 auto;
   font-size: 24px;
   text-align: center;
+}

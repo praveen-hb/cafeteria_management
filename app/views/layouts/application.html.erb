@@ -11,10 +11,15 @@
 
  <body class="Menu-body">
     <% if @current_user %>
-      <p class="UserHeader">
+      <div class="UserHeader">
+      <p class=User-name>
       Welcome <%=@current_user.first_name%>
+      </p>
+
+      <p>
       <%= link_to "Sign-out", destroy_session_path, method:"delete"%>
       </p>
+      </div>
     <% end %>
 
     <% if flash[:error]%>

@@ -4,17 +4,17 @@
     <% if @current_user.cart!=[] %>
       <table class="Table">
         <tr class="Table-row">
-          <th class="MenuItem-nameHead">Item-name </th>
-          <th class="MenuItem-priceHead">Item-price </th>
-          <th class="MenuItem-quantityHead">Item-quantity </th>
+          <th align="center" class="MenuItem-nameHead">Item-name </th>
+          <th align="center" class="MenuItem-priceHead">Item-price </th>
+          <th align="center" class="MenuItem-quantityHead">Item-quantity </th>
         </tr>
       <% @id_quantity.each do |item,quantity| %>
         <% if quantity and quantity>0 %>
         <li class="Menu-item">
           <tr>
-            <td class="MenuItem-name"> <%= MenuItem.find(item).name%> </td>
-            <td class="MenuItem-price"> <%= MenuItem.find(item).price%> </td>
-            <td class="MenuItem-quantity"> <%= quantity%> </td>
+            <td align="center" class="MenuItem-name"> <%= MenuItem.find(item).name%> </td>
+            <td align="center" class="MenuItem-price"> <%= MenuItem.find(item).price%> </td>
+            <td align="center" class="MenuItem-quantity"> <%= quantity%> </td>
             <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
               <%= hidden_field_tag "op","up"%>
              <td> <%= image_submit_tag "/uparrow.jpeg", class: "MenuItem-delete" %> </td>

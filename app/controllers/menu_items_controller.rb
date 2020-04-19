@@ -1,6 +1,7 @@
 class MenuItemsController < ApplicationController
   def index
     @menu_items = MenuItem.get_current_items
+    @role = current_user.role
     render "index"
   end
 

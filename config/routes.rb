@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
 
   get "/admin" => "admin#index", as: :admin_page
+  get "/clerk" => "admin#clerk", as: :clerk_page
   post "/admin" => "users#adding_user", as: :users_add_user
   get "/admin/add_user" => "users#adding_user_page", as: :users_add_user_page
   get "/admin/users_info" => "users#info", as: :users_info

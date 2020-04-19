@@ -142,3 +142,26 @@ tr:hover .MenuItem-delete {
   color: goldenrod;
   margin-left: 60px;
 }
+
+.Walk-in {
+  color: darkgreen;
+  margin: 0 auto;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.Carts {
+  display: flex;
+}
+
+.MenuItems-cart {
+  margin-right: 100px;
+}
+color: darkgreen;
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;color: darkgreen;
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;

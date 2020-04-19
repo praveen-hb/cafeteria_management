@@ -65,3 +65,16 @@
   margin-bottom: 30px;
   font-size: 30px;
 }
+
+.User-item:hover {
+  background-color:  #F1EDF7;
+}
+.User-item:hover .UserItem-delete {
+  visibility: visible;
+}
+
+.UserItem-delete {
+  visibility: hidden;
+  margin-left: 8px;
+  height: 24px;
+}

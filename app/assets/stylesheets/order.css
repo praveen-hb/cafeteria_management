@@ -17,6 +17,20 @@
     font-weight: 550;
   font-style: italic;
   color: black;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 30px;
+  }
+
+  .Not-delivered {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .GoBack {
+    margin-left: 80px;
+    font-weight: 500;
+    font-size: medium;
+    color: black;
+    border-radius: 4px;
+    height: 30px;
   }

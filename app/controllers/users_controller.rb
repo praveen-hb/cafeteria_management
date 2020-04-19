@@ -52,4 +52,10 @@ class UsersController < ApplicationController
     new_user.save!
     redirect_to admin_page_path
   end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to users_info_path
+  end
 end

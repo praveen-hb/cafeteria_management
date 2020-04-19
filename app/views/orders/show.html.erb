@@ -1,7 +1,18 @@
 <main class="MenuPage">
   <section class="Menu-items">
      <ul>
+      <div class="Not-delivered">
      <p class=Delivery-info> Not Delivered orders</p>
+     <%= submit_tag "Go Back",
+       class: "GoBack",
+       onclick: "goback()"
+       %>
+      <script>
+        function goback(){
+          window.history.back()
+        }
+      </script>
+     </div>
       <% @not_delivered_orders.all.each do |order| %>
         <li>
           <%= form_with(url: "/orders/#{order.id}", method: "PUT") do %>

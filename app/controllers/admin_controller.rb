@@ -6,4 +6,12 @@ class AdminController < ApplicationController
       render "/admin/error"
     end
   end
+
+  def clerk
+    if current_user.role == "clerk"
+      render "clerk"
+    else
+      render "/admin/error"
+    end
+  end
 end

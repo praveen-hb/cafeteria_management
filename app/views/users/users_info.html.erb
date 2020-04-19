@@ -17,7 +17,9 @@
             <p class= "User-email">
               <%=user.email%>
             </p>
-
+            <%= form_with(url: "/users/#{user.id}", method: "DELETE") do %>
+            <%= image_submit_tag "/trashcan.svg", class: "UserItem-delete" %>
+          <% end %>
             </li>
         <% end %>
       </ul>
@@ -37,7 +39,9 @@
             <p class= "User-email">
               <%=user.email%>
             </p>
-
+            <%= form_with(url: "/users/#{user.id}", method: "DELETE") do %>
+            <%= image_submit_tag "/trashcan.svg", class: "UserItem-delete" %>
+          <% end %>
             </li>
         <% end %>
       </ul>

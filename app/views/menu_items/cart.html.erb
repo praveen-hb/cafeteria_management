@@ -2,36 +2,32 @@
   <h1 class="Cart-title"> Items in cart: </h1>
   <ul class="Menu-items">
     <% if @current_user.cart!=[] %>
-      <table class="Table">
-        <tr class="Table-row">
-          <th align="center" class="MenuItem-nameHead">Item-name </th>
-          <th align="center" class="MenuItem-priceHead">Item-price </th>
-          <th align="center" class="MenuItem-quantityHead">Item-quantity </th>
-        </tr>
+        <li class="Menu-item">
+          <p align="left" class="MenuItem-nameHead">Item-name </p>
+          <p align="right" class="MenuItem-priceHead">Price </p>
+          <p align="center" class="MenuItem-quantityHead">Quantity </p>
+        </li>
       <% @id_quantity.each do |item,quantity| %>
         <% if quantity and quantity>0 %>
         <li class="Menu-item">
-          <tr>
-            <td align="center" class="MenuItem-name"> <%= MenuItem.find(item).name%> </td>
-            <td align="center" class="MenuItem-price"> <%= MenuItem.find(item).price%> </td>
-            <td align="center" class="MenuItem-quantity"> <%= quantity%> </td>
+            <p align="left" class="MenuItem-name"> <%= MenuItem.find(item).name%> </p>
+            <p align="right" class="MenuItem-price"> <%= MenuItem.find(item).price%> </p>
+            <p align="right" class="MenuItem-quantity"> <%= quantity%> </p>
             <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
               <%= hidden_field_tag "op","up"%>
-             <td> <%= image_submit_tag "/uparrow.jpeg", class: "MenuItem-delete" %> </td>
+             <p> <%= image_submit_tag "/plus.png", class: "MenuItem-up" %> </p>
             <% end %>
             <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
              <%= hidden_field_tag "op","down"%>
-             <td> <%= image_submit_tag "/downarrow.png", class: "MenuItem-delete" %> </td>
+             <p> <%= image_submit_tag "/minus.png", class: "MenuItem-down" %> </p>
             <% end %>
             <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
              <%= hidden_field_tag "op","del"%>
-             <td> <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %> </td>
+             <p> <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %> </p>
             <% end %>
-          </tr>
         </li>
         <% end %>
       <% end %>
-      </table>
     <section class="Menu-itemsTotal">
         <h1 class="Cart-total">  Total Cart Value: <h1>
         <h1 class="Cart-totalValue"> <%= MenuItem.get_cart_value(@id_quantity)%>

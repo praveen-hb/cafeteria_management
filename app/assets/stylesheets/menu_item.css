@@ -24,15 +24,16 @@
   background-color: #F1EDF7;
 }
 
-tr:hover {
-  background-color: #F1EDF7;
-}
 
-tr:hover .MenuItem-delete {
+.Menu-item:hover .MenuItem-delete {
   visibility: visible;
 }
 
-.Menu-item:hover .MenuItem-delete {
+.Menu-item:hover .MenuItem-up{
+  visibility: visible;
+}
+
+.Menu-item:hover .MenuItem-down {
   visibility: visible;
 }
 
@@ -50,6 +51,19 @@ tr:hover .MenuItem-delete {
 }
 
 .MenuItem-delete {
+  visibility: hidden;
+  margin-left: 8px;
+  height: 24px;
+}
+
+.MenuItem-up {
+  visibility: hidden;
+  margin-left: 60px;
+  height: 24px;
+
+}
+
+.MenuItem-down {
   visibility: hidden;
   margin-left: 8px;
   height: 24px;

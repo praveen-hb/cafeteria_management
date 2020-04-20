@@ -6,10 +6,10 @@
   <section class="Menu-items">
     <ul>
     <li class="Menu-item">
-      <p align="left" class="MenuItem-nameHead"> Item-Name </p>
+      <p align="left" class="MenuItem-nameHead">Item-Name</p>
       <p align="left" class="MenuItem-descHead"> Description </p>
-      <p align="right" class="MenuItem-priceHead"> Price </p>
-      <p align="right" class="MenuItem-quantityHead"> Quantity </p>
+      <p align="right" class="MenuItem-priceHead">Price</p>
+      <p align="right" class="MenuItem-quantityHead"> Quantity</p>
     </li>
       <%= form_with(url: "/menu_items/cart", method: "POST") do %>
         <% @menu_items.each do |item| %>

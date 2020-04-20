@@ -15,6 +15,13 @@
       <p class=User-name>
       Welcome <%=@current_user.first_name%>
       </p>
+      <% if @role=="clerk"%>
+         <%= link_to "my order", destroy_session_path, method:"delete"%>
+      <% end %>
+
+      <p>
+
+      </p>
 
       <p>
       <%= link_to "Sign-out", destroy_session_path, method:"delete"%>

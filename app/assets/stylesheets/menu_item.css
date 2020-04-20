@@ -214,3 +214,12 @@ color: darkgreen;
   font-size: 24px;
   text-align: center;
 }
+
+.MenuItem-back {
+  margin-top: 30px;
+  margin-left: 270px;
+  color: black;
+  font-weight: 600;
+  background-color: white;
+  height: 40px;
+}

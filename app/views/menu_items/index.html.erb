@@ -28,6 +28,11 @@
     </ul>
   </section>
   <% if @role!="customer"%>
-  <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/clerk'"%>
+  <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"goback()"%>
   <% end %>
+  <script>
+        function goback(){
+          window.history.back()
+        }
+      </script>
 </main>

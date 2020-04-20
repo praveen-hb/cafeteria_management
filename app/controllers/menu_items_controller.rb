@@ -104,4 +104,22 @@ class MenuItemsController < ApplicationController
     menu_item.destroy
     redirect_to(request.env["HTTP_REFERER"])
   end
+
+  def myorders
+    id = current_user.id
+    @delivered_orders = Order.delivered_user(id)
+    @not_delivered_orders = Order.not_delivered_user(id)
+
+    @delivered_ordered_items = Array.new
+    @not_delivered_ordered_items = Array.new
+
+    @delivered_orders.each do |order|
+      @delivered_ordered_items << OrderItem.ordered_items(order.id)
+    end
+    @not_delivered_orders.each do |order|
+      @not_delivered_ordered_items.push(OrderItem.ordered_items(order.id))
+      #@not_delivered_ordered_items << order.order_items
+    end
+    render "myorders"
+  end
 end

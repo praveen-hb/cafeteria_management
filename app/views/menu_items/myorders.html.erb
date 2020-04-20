@@ -1,0 +1,76 @@
+<main class="MenuPage">
+  <h1 class="MenuPage-title"> My Orders </h1>
+  <section class="Menu-items">
+
+      <ul>
+      <h1 class="User-title"> Not Delivered orders </h1>
+        <% @not_delivered_orders.each do |order| %>
+          <li class="User-item">
+            <p class="User-bold">
+              Order number:
+            </p>
+            <p class= "User-name">
+             <%= order.id%>
+            </p>
+            </li>
+        <% end %>
+      </ul>
+
+
+      <ul>
+      <h1 class="User-title"> Delivered orders </h1>
+        <% @delivered_orders.each do |order| %>
+          <li class="User-item">
+            <p class="User-bold">
+              Order number:
+            </p>
+            <p class= "User-name">
+             <%= order.id%>
+            </p>
+            </li>
+            <li class="User-item">
+            <p class="User-bold">
+              Delivered on:
+            </p>
+            <p class= "User-name">
+             <%= order.date%>
+            </p>
+            </li>
+        <% end %>
+      </ul>
+
+
+      <ul>
+      <h1 class="User-title"> Not Delivered order items </h1>
+        <% @not_deliverd_ordered_items.each do |order_item| %>
+          <li class="User-item">
+            <p class="User-bold">
+              Order number:
+            </p>
+            <p class= "User-name">
+             <%= order_item.order_id%>
+            </p>
+            <p class="User-bold">
+              Menu item name:
+            </p>
+            <p class= "User-name">
+             <%= order_item.menu_item_name%>
+            </p>
+            <p class="User-bold">
+              Menu Item price:
+            </p>
+            <p class= "User-name">
+             <%= order_item.menu_item_price%>
+            </p>
+            <p class="User-bold">
+              Menu item quantity:
+            </p>
+            <p class= "User-name">
+             <%= order_item.menu_item_quantity%>
+            </p>
+            </li>
+        <% end %>
+      </ul>
+
+  </section>
+</main>

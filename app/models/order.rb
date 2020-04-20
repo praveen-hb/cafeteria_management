@@ -14,6 +14,7 @@ class Order < ActiveRecord::Base
   end
 
   def self.delivered_user(id)
-    Order.all.where(delivered_at: (not nil), user_id: id)
+    @user_order = Order.all.where(user_id: id)
+    @user_order.all.where.not(delivered_at: nil)
   end
 end

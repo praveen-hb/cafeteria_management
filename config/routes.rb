@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :order_items
   resources :menus
   resources :users
+  get "/myorders" => "menu_items#myorders", as: :my_orders
   get "/menu_items/refreshcart" => "menu_items#refreshcart", as: :refresh_cart
   get "/admin" => "admin#index", as: :admin_page
   get "/clerk" => "admin#clerk", as: :clerk_page

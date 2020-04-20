@@ -15,8 +15,6 @@
             </li>
         <% end %>
       </ul>
-
-
       <ul>
       <h1 class="User-title"> Delivered orders </h1>
         <% @delivered_orders.each do |order| %>
@@ -41,8 +39,7 @@
 
       <ul>
       <h1 class="User-title"> Not Delivered order items </h1>
-        <% @not_delivered_orders.each do |order| %>
-        <% order.order_items.each do |order_item| %>
+        <% @delivered_order_items.each do |order_item| %>
           <li class="User-item">
             <p class="User-bold">
               Order number:
@@ -69,7 +66,6 @@
              <%= order_item.menu_item_quantity%>
             </p>
             </li>
-          <% end %>
         <% end %>
       </ul>
 

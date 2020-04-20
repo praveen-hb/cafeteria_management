@@ -17,4 +17,23 @@ class Order < ActiveRecord::Base
     @user_order = Order.all.where(user_id: id)
     @user_order.all.where.not(delivered_at: nil)
   end
+
+  def self.get_delivered_order_items(delivered_orders)
+    order_items = []
+    delivered_orders.each do |order|
+      order.order_items.each do |item|
+        order_items << item
+      end
+    end
+    order_items
+  end
+  def self.get_not_delivered_order_items(not_delivered_orders)
+    order_items = []
+    not_delivered_orders.each do |order|
+      order.order_items.each do |item|
+        order_items << item
+      end
+    end
+    order_items
+  end
 end

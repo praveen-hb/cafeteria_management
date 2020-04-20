@@ -109,6 +109,8 @@ class MenuItemsController < ApplicationController
     id = current_user.id
     @delivered_orders = Order.delivered_user(id)
     @not_delivered_orders = Order.not_delivered_user(id)
+    @delivered_order_items = Order.get_delivered_order_items(@delivered_orders)
+    @not_delivered_order_items = Order.get_not_delivered_order_items(@not_delivered_orders)
     render "myorders"
   end
 end

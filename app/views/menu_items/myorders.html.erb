@@ -1,75 +1,80 @@
 <main class="MenuPage">
-  <h1 class="MenuPage-title"> My Orders </h1>
-  <section class="Menu-items">
+  <h1 class="Myorders-title">Not Delivered items </h1>
+  <% @not_delivered_orders.each do |order| %>
+    <li class="User-item">
+      <p class="Order-bold">
+        Order number:
+      </p>
+      <p class="Order-name">
+        <%= order.id%>
+      </p>
+    </li>
 
-      <ul>
-      <h1 class="User-title"> Not Delivered orders </h1>
-        <% @not_delivered_orders.each do |order| %>
-          <li class="User-item">
-            <p class="User-bold">
-              Order number:
-            </p>
-            <p class= "User-name">
-             <%= order.id%>
-            </p>
-            </li>
+
+        <table class="Table">
+          <tr class="Table-row">
+            <th class="MenuItem-nameHead"> Menu item name </th>
+            <th class="MenuItem-priceHead"> Menu Item price</th>
+            <th class="MenuItem-quantityHead">Menu item quantity</th>
+          </tr>
+          <% @not_delivered_order_items.each do |order_item| %>
+            <% if order_item.order_id==order.id %>
+              <li class="Menu-item">
+                <tr>
+                  <td class="MenuItem-name"> <%= order_item.menu_item_name %> </td>
+                  <td class="MenuItem-price"> <%= order_item.menu_item_price %> </td>
+                  <td class="MenuItem-quantity"> <%= order_item.menu_item_quantity %> </td>
+                </tr>
+              </li>
+            <% end %>
+          <% end %>
+        </table>
+
+
+  <% end %>
+
+  <h1 class="Cart-title">Delivered items </h1>
+    <% @delivered_orders.each do |order| %>
+      <li class="User-item">
+        <p class="Order-bold">
+          Order number:
+        </p>
+        <p class= "Order-name">
+          <%= order.id%>
+        </p>
+      </li>
+      <li class="User-item">
+        <p class="User-bold">
+          Delivered on:
+        </p>
+        <p class= "User-name">
+          <%= order.date%>
+        </p>
+      </li>
+
+
+        <table class="Table">
+        <tr class="Table-row">
+          <th class="MenuItem-nameHead"> Menu item name </th>
+          <th class="MenuItem-priceHead"> Menu Item price</th>
+          <th class="MenuItem-quantityHead">Menu item quantity</th>
+        </tr>
+      <% @delivered_order_items.each do |order_item| %>
+        <% if order_item.order_id==order.id %>
+        <li class="Menu-item">
+          <tr>
+            <td class="MenuItem-name"> <%= order_item.menu_item_name %> </td>
+            <td class="MenuItem-price"> <%= order_item.menu_item_price %> </td>
+            <td class="MenuItem-quantity"> <%= order_item.menu_item_quantity %> </td>
+          </tr>
+        </li>
         <% end %>
-      </ul>
-      <ul>
-      <h1 class="User-title"> Delivered orders </h1>
-        <% @delivered_orders.each do |order| %>
-          <li class="User-item">
-            <p class="User-bold">
-              Order number:
-            </p>
-            <p class= "User-name">
-             <%= order.id%>
-            </p>
-            </li>
-            <li class="User-item">
-            <p class="User-bold">
-              Delivered on:
-            </p>
-            <p class= "User-name">
-             <%= order.date%>
-            </p>
-            </li>
-        <% end %>
-      </ul>
-
-      <ul>
-      <h1 class="User-title"> Not Delivered order items </h1>
-        <% @delivered_order_items.each do |order_item| %>
-          <li class="User-item">
-            <p class="User-bold">
-              Order number:
-            </p>
-            <p class= "User-name">
-             <%= order_item.order_id%>
-            </p>
-            <p class="User-bold">
-              Menu item name:
-            </p>
-            <p class= "User-name">
-             <%= order_item.menu_item_name%>
-            </p>
-            <p class="User-bold">
-              Menu Item price:
-            </p>
-            <p class= "User-name">
-             <%= order_item.menu_item_price%>
-            </p>
-            <p class="User-bold">
-              Menu item quantity:
-            </p>
-            <p class= "User-name">
-             <%= order_item.menu_item_quantity%>
-            </p>
-            </li>
-        <% end %>
-      </ul>
+      <% end %>
+      </table>
 
 
+    <% end %>
 
-  </section>
+    <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menu_items'"%>
+
 </main>

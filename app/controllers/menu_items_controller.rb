@@ -46,7 +46,8 @@ class MenuItemsController < ApplicationController
     menu_item.price = params[:price]
     menu_item.description = params[:description]
     menu_item.save!
-    redirect_to refresh_cart_path
+    #redirect_to refresh_cart_path
+    redirect_to(request.env["HTTP_REFERER"])
   end
 
   def update

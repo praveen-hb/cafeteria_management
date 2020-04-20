@@ -5,27 +5,21 @@
   <h1 class="MenuPage-title"> Available items </h1>
   <section class="Menu-items">
     <ul>
-    <table class="Table">
-    <tr class="Table-row">
-      <th align="left" class="MenuItem-nameHead"> Item-Name </th>
-      <th align="center" class="MenuItem-descHead"> Description </th>
-      <th align="right" class="MenuItem-priceHead"> Price </th>
-       <th align="right" class="MenuItem-quantityHead">Quantity </th>
-    </tr>
-    <tr>
-    </tr>
+    <li class="Menu-item">
+      <p align="left" class="MenuItem-nameHead"> Item-Name </p>
+      <p align="left" class="MenuItem-descHead"> Description </p>
+      <p align="right" class="MenuItem-priceHead"> Price </p>
+      <p align="right" class="MenuItem-quantityHead"> Quantity </p>
+    </li>
       <%= form_with(url: "/menu_items/cart", method: "POST") do %>
         <% @menu_items.each do |item| %>
           <li class="Menu-item">
-          <tr class="Table-row">
-            <td align="left"> <p class= "MenuItem-name"> <%= item.name%> </p> </td>
-            <td align="center"> <p class= "MenuItem-desc"> <%= item.description%> </p> </td>
-            <td align="right"> <p class= "MenuItem-price"> <%= item.price%> </p> </td>
-          <td align=right> <%= number_field_tag item.id.to_s.to_sym,0,class: "MenuItem-quantity",min: 0%> </td>
-          </tr>
+            <p align="left" class= "MenuItem-name"> <%= item.name%> </p>
+            <p align="left" class= "MenuItem-desc"> <%= item.description%> </p>
+            <p align="right" class= "MenuItem-price"> ₹ <%= item.price%> </p>
+            <p align="right" class="MenuItem-quantity"> <%= number_field_tag item.id.to_s.to_sym,0,class: "MenuItem-quantity",min: 0%> </p>
           </li>
         <% end %>
-    </table>
       <div class= "Carts">
       <%= submit_tag "Add to cart", class: "MenuItems-cart"%>
     <% end %>

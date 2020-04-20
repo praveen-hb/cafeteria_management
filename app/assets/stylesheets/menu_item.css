@@ -13,10 +13,6 @@
   margin-top: 10px;
 }
 
-.MenuItem-quantity {
-  width: 40px;
-}
-
 .Cart-title {
   font-weight: 600;
   font-size: 32px;
@@ -87,39 +83,53 @@ tr:hover .MenuItem-delete {
 .MenuItem-name {
   margin-left: 10px;
   font-size: 24px;
+  width: 200px;
 }
 
 .MenuItem-descHead {
-  margin-left: 10px;
-  font-size: 24px;
-  font-style: italic;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 30px;
+  font-size: 32px;
+  width: 150px;
+  font-weight: 500;
+  font-style: oblique;
+  color:rgb(208, 211, 16);
+}
+
+.MenuItem-desc {
+  width: 150px;
+  margin-left: 30px;
 }
 
 
 .MenuItem-price {
-  margin-left: 20px;
+
   font-size: 24px;
+  width: 100px;
 }
 
 .MenuItem-priceHead {
   font-size: 32px;
   font-weight: 500;
   font-style: italic;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 100px;
+  color:rgb(208, 211, 16);
 }
 .MenuItem-quantityHead {
   font-size: 32px;
+  margin-left: 20px;
   font-weight: 500;
   font-style: italic;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 100px;
+  color:rgb(208, 211, 16);
 }
 
 .MenuItem-nameHead {
   font-size: 32px;
   font-weight: 500;
-  font-style: italic;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 200px;
+  font-style: oblique;
+  color:rgb(208, 211, 16);
+
 }
 
 .Table {
@@ -130,12 +140,15 @@ tr:hover .MenuItem-delete {
 .MenuItem-quantity {
   margin-left: 20px;
   font-size: 24px;
+  width: 50px;
 }
 
 .Submit-Button{
   margin-left: 10px;
 }
-
+.Menu-items {
+  margin-top: 40px;
+}
 
 .Menu-itemsTotal
 {

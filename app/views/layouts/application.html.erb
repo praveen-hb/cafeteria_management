@@ -15,14 +15,10 @@
       <p class=User-name>
       Welcome <%=@current_user.first_name%>
       </p>
-      <% if @role=="clerk"%>
-         <%= link_to "my order", destroy_session_path, method:"delete"%>
+      <% if @role=="customer"%>
+         <%= link_to "my order", my_orders_path, method:"get"%>
       <% end %>
-
-      <p>
-
       </p>
-
       <p>
       <%= link_to "Sign-out", destroy_session_path, method:"delete"%>
       </p>

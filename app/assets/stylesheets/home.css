@@ -16,8 +16,12 @@
 .Home-image {
   width: 600px;
   height: 300px;
+  border-radius: 50%;
 }
 
+.Home-image:hover {
+  transform: scaleX(-1);
+}
 
 .UserHeader {
   padding: 10px;
@@ -41,6 +45,17 @@
   text-align: center;
 }
 
-.Founder-1 {
-  height: 30px;
+.Flash-notice {
+  color: darkgreen;
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;
+}
+
+.UserHeader2 {
+  display: flex;
+}
+
+.Sign-out {
+  margin-left: 10px;
 }

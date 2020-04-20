@@ -1,5 +1,5 @@
 <main class="MenuPage">
-   <% if @role=="clerk"%>
+   <% if @role!="customer"%>
   <h1 class="Walk-in"> Walk-in-Customer </h1>
   <% end %>
   <h1 class="MenuPage-title"> Available items </h1>
@@ -27,7 +27,7 @@
       </div>
     </ul>
   </section>
-  <% if @role=="clerk"%>
+  <% if @role!="customer"%>
   <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/clerk'"%>
   <% end %>
 </main>

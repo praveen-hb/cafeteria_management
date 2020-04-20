@@ -40,6 +40,7 @@
 .MenuItem-edit {
   visibility: hidden;
   margin-left: 20px;
+  height: 20px;
 }
 
 .Menu-item:hover .MenuItem-edit {

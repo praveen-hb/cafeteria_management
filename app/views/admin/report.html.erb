@@ -1,16 +1,14 @@
 <main class="ReportPage">
   <ul>
-    <input class="From-date" type="date" name="from_date">
-    <input class="To-date" type="date" name="to_date">
-  </ul>
-  <ul>
-    <%= form_with(url: "/orders/invoices", method: "POST",class: "AddOrder") do %>
-      <%= submit_tag "View all Reports", class: "MenuItems-cart"%>
-    <% end %>
+  <%= form_with(url: "/orders/invoices", method: "POST",class: "View-Order") do %>
+    FROM:<input class="From-date" type="date" name="from_date" placeholder="From-date">
+    TO:<input class="To-date" type="date" name="to_date" placeholder="To-date">
+    <%= submit_tag "View all Reports", class: "MenuItems-cart"%>
+  <% end %>
   </ul>
   <ul>
     <%= form_with(url: "", method: "",class: "AddOrder") do %>
-      <%= number_field_tag "custumer_id", placeholder:" customer id " %>
+      <%= number_field_tag "custumer_id", placeholder:" customer id ", class: "Custumer-id" %>
       <%= submit_tag "View customer Report", class: "MenuItems-cart",onclick:"location.href=''"%>
     <% end %>
   </ul>

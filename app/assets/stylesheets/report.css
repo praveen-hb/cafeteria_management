@@ -10,6 +10,8 @@
   margin-right: 30px;
   border-radius:4px;
   border:1px solid #BFB8CC;
+  margin-bottom: 30px;
+  margin-left: 10px;
 }
 
 .To-date{
@@ -20,4 +22,13 @@
   margin-left: 10px;
   border-radius:4px;
   border:1px solid #BFB8CC;
+  margin-bottom: 30px;
+}
+
+.Custumer-id{
+  width:200px;
+}
+
+.View-Order{
+  margin-left: 50px;
 }

@@ -26,3 +26,5 @@ class AdminController < ApplicationController
     #render "invoices"
   end
 end
+
+#<%= submit_tag order.user.first_name,class: "Menu-name",onclick: "location.href='/orders/#{order.id}'" %></h2>

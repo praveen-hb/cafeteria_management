@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :order_items
   resources :menus
   resources :users
+  post "/orders/customer_invoices" => "orders#customer_invoices", as: :customer_invoices
   get "/admin/report" => "admin#reports", as: :reports
   post "/admin/invoices" => "admin#invoices", as: :invoices
   get "/myorders" => "menu_items#myorders", as: :my_orders

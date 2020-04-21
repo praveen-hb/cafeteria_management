@@ -40,4 +40,9 @@ class Order < ActiveRecord::Base
   def self.get_list(from, to)
     where("date >= ? and date <= ?", from, to)
   end
+
+  def self.get_custumer_list(from, to, id)
+    @user_order = Order.all.where(user_id: id)
+    @user_order.all.where("date >= ? and date <= ?", from, to)
+  end
 end

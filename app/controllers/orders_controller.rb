@@ -32,4 +32,9 @@ class OrdersController < ApplicationController
     @delivered_orders = Order.delivered_user(current_user.id)
     render "orders/show"
   end
+
+  def customer_invoices
+    @orders = Order.get_custumer_list(params[:from_date], params[:to_date], params[:customer_id])
+    render "admin/report"
+  end
 end

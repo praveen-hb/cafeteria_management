@@ -15,16 +15,13 @@ class AdminController < ApplicationController
     end
   end
 
+  def invoice_bills
+    session[:orders] = nil
+    redirect_to reports_path
+  end
+
   def reports
-    @orders = []
+    @orders = session[:orders]
     render "report"
   end
-
-  def invoices
-    @orders = Order.get_list(params[:from_date], params[:to_date])
-    redirect_to invoices_path
-    #render "invoices"
-  end
 end
-
-#<%= submit_tag order.user.first_name,class: "Menu-name",onclick: "location.href='/orders/#{order.id}'" %></h2>

@@ -1,6 +1,6 @@
 <main class="ReportPage">
   <ul>
-    <%= form_with(url: "/admin/invoices", method: "POST", class: "AddOrder") do %>
+    <%= form_with(url: "/orders/invoices", method: "POST", class: "AddOrder") do %>
      FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %>
       TO: <%= date_field_tag 'to_date',nil, class: "To-date" %>
       <%= submit_tag "View all Reports", class: "MenuItems-cart"%>
@@ -14,14 +14,14 @@
       <%= submit_tag "View customer Report", class: "MenuItems-cart"%>
     <% end %>
   </ul>
-  <% if @orders!=[] %>
+  <% if @orders %>
     <h1 class="Invoice-title"> All Invoice bills </h1>
     <ul class="Menu-items">
       <% @orders.each do |order|%>
-        <li >
-          <h2> <%= order.id%> </h2>
-          <h2> <%= order.user.first_name%> </h2>
-          <h2> <%= order.value %> </h2>
+        <li class="Menu-item" >
+          <h2 class="Order-id"> <%= order["id"]%> </h2>
+          <h2 class="User-name"> <%= User.find(order["user_id"]).first_name%> </h2>
+          <h2 class="Order-value"> <%= order["value"] %> </h2>
          </li>
        <% end %>
       </ul>

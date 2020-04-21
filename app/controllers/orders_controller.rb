@@ -33,8 +33,15 @@ class OrdersController < ApplicationController
     render "orders/show"
   end
 
+  def invoices
+    @orders = Order.get_list(params[:from_date], params[:to_date])
+    session[:orders] = @orders
+    redirect_to reports_path
+  end
+
   def customer_invoices
-    @orders = Order.get_custumer_list(params[:from_date], params[:to_date], params[:customer_id])
-    render "admin/report"
+    @orders = Order.get_customer_list(params[:from_date], params[:to_date], params[:customer_id])
+    session[:orders] = @orders
+    redirect_to reports_path
   end
 end

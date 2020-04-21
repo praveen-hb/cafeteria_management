@@ -38,3 +38,13 @@
   .Order-details{
     margin-top: 50px;
   }
+
+  .Order-id {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .Order-value {
+   font-size: 20px;
+    font-weight: 500;
+  }

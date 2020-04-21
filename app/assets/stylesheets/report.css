@@ -32,3 +32,66 @@
 .View-Order{
   margin-left: 50px;
 }
+.Invoice-title {
+  font-weight: 600;
+  font-size: 32px;
+  margin-top: 30px;
+}
+.Order-idHead {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+  width: 100px;
+}
+.OrderItems-head {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
+  width:100px;
+}
+
+.Order-valueHead {
+ font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
+  width:100px;
+}
+
+
+.OrderedUser-nameHead {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  width: 150px;
+}
+
+
+.Order-id {
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 20px;
+  width: 100px;
+}
+
+.Order-value {
+ font-size: 20px;
+  font-weight: 500;
+  margin-left: 20px;
+  width:100px;
+}
+
+.OrderItems {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 20px;
+  width:100px;
+}
+
+.OrderedUser-name {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+  width: 150px;
+}

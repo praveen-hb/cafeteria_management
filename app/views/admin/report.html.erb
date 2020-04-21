@@ -17,11 +17,18 @@
   <% if @orders %>
     <h1 class="Invoice-title"> All Invoice bills </h1>
     <ul class="Menu-items">
+      <li class="Menu-item">
+        <h2 align="center" class="Order-idHead"> Order-id </h2>
+        <h2 align="left" class="OrderedUser-nameHead"> User-Name </h2>
+        <h2 align="center" class="OrderItems-head"> Items </h2>
+        <h2 align="right" class="Order-valueHead"> Total Bill </h2>
+      </li>
       <% @orders.each do |order|%>
         <li class="Menu-item" >
-          <h2 class="Order-id"> <%= order["id"]%> </h2>
-          <h2 class="User-name"> <%= User.find(order["user_id"]).first_name%> </h2>
-          <h2 class="Order-value"> <%= order["value"] %> </h2>
+          <h2 align="center" class="Order-id"> <%= order["id"]%> </h2>
+          <h2 align="left" class="OrderedUser-name"> <%= User.find(order["user_id"]).first_name %> <%= User.find(order["user_id"]).last_name %> </h2>
+          <h2 align="center" class="OrderItems"> <%= Order.find(order["id"]).order_items.count%> </h2>
+          <h2 align="right" class="Order-value"> <%= order["value"] %> </h2>
          </li>
        <% end %>
       </ul>

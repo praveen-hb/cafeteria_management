@@ -27,12 +27,6 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  def invoices
-    @orders = Order.get_list(params[:from_date], params[:to_date])
-    render "admin/report"
-    #render "invoices"
-  end
-
   def display
     @not_delivered_orders = Order.not_delivered_user(current_user.id)
     @delivered_orders = Order.delivered_user(current_user.id)

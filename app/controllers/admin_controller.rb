@@ -19,4 +19,10 @@ class AdminController < ApplicationController
     @orders = []
     render "report"
   end
+
+  def invoices
+    @orders = Order.get_list(params[:from_date], params[:to_date])
+    redirect_to invoices_path
+    #render "invoices"
+  end
 end

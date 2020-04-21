@@ -1,6 +1,6 @@
 <main class="ReportPage">
   <ul>
-    <%= form_with(url: "/orders/invoices", method: "POST", class: "AddOrder") do %>
+    <%= form_with(url: "/admin/invoices", method: "POST", class: "AddOrder") do %>
      FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %>
       TO: <%= date_field_tag 'to_date',nil, class: "To-date" %>
       <%= submit_tag "View all Reports", class: "MenuItems-cart"%>

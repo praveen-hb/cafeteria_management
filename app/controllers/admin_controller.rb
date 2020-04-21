@@ -14,4 +14,8 @@ class AdminController < ApplicationController
       render "/admin/error"
     end
   end
+
+  def reports
+    render "report"
+  end
 end

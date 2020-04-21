@@ -29,7 +29,8 @@ class OrdersController < ApplicationController
 
   def invoices
     @orders = Order.get_list(params[:from_date], params[:to_date])
-    render "invoices"
+    render "admin/report"
+    #render "invoices"
   end
 
   def display

@@ -1,10 +1,10 @@
 <main class="ReportPage">
   <ul>
-  <%= form_with(url: "/orders/invoices", method: "POST",class: "View-Order") do %>
-    FROM:<input class="From-date" type="date" name="from_date" placeholder="From-date">
-    TO:<input class="To-date" type="date" name="to_date" placeholder="To-date">
-    <%= submit_tag "View all Reports", class: "MenuItems-cart"%>
-  <% end %>
+    <%= form_with(url: "/orders/invoices", method: "POST", class: "AddOrder") do %>
+     FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %>
+      TO: <%= date_field_tag 'to_date',nil, class: "To-date" %>
+      <%= submit_tag "View all Reports", class: "MenuItems-cart"%>
+    <% end %>
   </ul>
   <ul>
     <%= form_with(url: "", method: "",class: "AddOrder") do %>
@@ -12,5 +12,18 @@
       <%= submit_tag "View customer Report", class: "MenuItems-cart",onclick:"location.href=''"%>
     <% end %>
   </ul>
+  <% if @orders!=[] %>
+    <h1 class="Invoice-title"> All Invoice bills </h1>
+    <ul class="Menu-items">
+      <% @orders.each do |order|%>
+        <li >
+          <h2> <%= order.id%> </h2>
+          <h2> <%= order.user.first_name%> </h2>
+          <h2> <%= order.value %> </h2>
+         </li>
+       <% end %>
+      </ul>
+  <%end %>
+
 
 </main>

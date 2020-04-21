@@ -16,6 +16,7 @@ class AdminController < ApplicationController
   end
 
   def reports
+    @orders = []
     render "report"
   end
 end

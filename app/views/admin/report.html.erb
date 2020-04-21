@@ -7,9 +7,11 @@
     <% end %>
   </ul>
   <ul>
-    <%= form_with(url: "", method: "",class: "AddOrder") do %>
-      <%= number_field_tag "custumer_id", placeholder:" customer id ", class: "Custumer-id" %>
-      <%= submit_tag "View customer Report", class: "MenuItems-cart",onclick:"location.href=''"%>
+    <%= form_with(url: "/orders/customer_invoices", method: "POST",class: "AddOrder") do %>
+      FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %>
+      TO: <%= date_field_tag 'to_date',nil, class: "To-date" %>
+      <%= number_field_tag "customer_id", placeholder:" customer id ", class: "Customer-id" %>
+      <%= submit_tag "View customer Report", class: "MenuItems-cart"%>
     <% end %>
   </ul>
   <% if @orders!=[] %>

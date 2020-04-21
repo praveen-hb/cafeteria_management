@@ -1,4 +1,5 @@
 <main class="MenuPage">
+<% if @delivered_orders!=[] or @not_delivered_orders!=[] %>
   <h1 class="Myorders-title">Past orders </h1>
     <% @delivered_orders.each do |order| %>
       <li class="User-item">
@@ -67,6 +68,9 @@
     </table>
   <% end %>
 
+<% else %>
+  <h1 class="Error message"> No orders till date</h1>
+<% end %>
 
     <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menu_items'"%>
 

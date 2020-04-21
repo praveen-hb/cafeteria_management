@@ -1,0 +1,18 @@
+<main class="ReportPage">
+  <li>
+    <input class="From-date" type="date" name="from_date">
+    <input class="To-date" type="date" name="to_date">
+  </li>
+  <li>
+    <%= form_with(url: "/orders/invoices", method: "POST",class: "AddOrder") do %>
+      <%= submit_tag "View all Reports", class: "MenuItems-cart"%>
+    <% end %>
+  </li>
+  <li>
+    <%= form_with(url: "", method: "",class: "AddOrder") do %>
+      <%= number_field_tag "custumer_id", placeholder:" customer id " %>
+      <%= submit_tag "View customer Report", class: "MenuItems-cart",onclick:"location.href=''"%>
+    <% end %>
+  </li>
+
+</main>

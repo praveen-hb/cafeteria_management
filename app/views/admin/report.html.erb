@@ -1,10 +1,11 @@
 <main class="ReportPage">
   <ul>
-    <input class="From-date" type="date" name="from_date">
-    <input class="To-date" type="date" name="to_date">
+   <%= form_with(url: "/orders/invoices", method: "POST",class: "AddOrder") do %>
+  <%= date_field_tag 'from_date',nil, class: "From-date" %>
+  <%= date_field_tag 'to_date',nil, class: "To-date" %>
   </ul>
   <ul>
-    <%= form_with(url: "/orders/invoices", method: "POST",class: "AddOrder") do %>
+
       <%= submit_tag "View all Reports", class: "MenuItems-cart"%>
     <% end %>
   </ul>

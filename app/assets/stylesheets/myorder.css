@@ -90,3 +90,8 @@
 .Order-deliver{
   text-align:left;
 }
+
+.Error-message{
+  font-weight: 400;
+  font-size: 30px;
+}

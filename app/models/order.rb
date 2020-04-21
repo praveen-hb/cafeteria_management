@@ -38,6 +38,6 @@ class Order < ActiveRecord::Base
   end
 
   def self.get_list(from, to)
-    Order.all.where("data >= ? and date <= ?", from, to)
+    Order.all.where(["date >= ? and date <= ?", from, to])
   end
 end

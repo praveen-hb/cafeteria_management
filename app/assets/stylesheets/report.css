@@ -95,3 +95,26 @@
   margin-right: 10px;
   width: 150px;
 }
+
+.Invoice-info {
+  height: 25px;
+  margin-left: 20px;
+  visibility: hidden;
+}
+
+.Invoice-item {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.Invoice-item:hover {
+  background-color:#F1EDF7;
+}
+
+.Invoice-item:hover .Invoice-info {
+  visibility: visible;
+}
+
+.Invoice-items {
+  margin-top: 30px;
+}

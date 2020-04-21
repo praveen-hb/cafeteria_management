@@ -27,12 +27,10 @@
       </div>
     </ul>
   </section>
-  <% if @role!="customer"%>
-  <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"goback()"%>
+  <% if @role=="owner"%>
+  <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/admin'"%>
+  <%elsif @role=="clerk"%>
+  <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/clerk'"%>
   <% end %>
-  <script>
-        function goback(){
-          window.history.back()
-        }
-      </script>
+
 </main>

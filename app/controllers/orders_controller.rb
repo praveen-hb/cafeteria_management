@@ -8,6 +8,12 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show
+    @id = params[:id]
+    @order_items = OrderItem.ordered_items(@id)
+    render "order_item_list"
+  end
+
   def create
     new_order = Order.create!(
       date: Date.today,

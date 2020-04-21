@@ -27,6 +27,7 @@ class Order < ActiveRecord::Base
     end
     order_items
   end
+
   def self.get_not_delivered_order_items(not_delivered_orders)
     order_items = []
     not_delivered_orders.each do |order|

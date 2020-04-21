@@ -29,7 +29,8 @@
 
 .Menu-edit {
   visibility: hidden;
-  margin-left: 10px;
+  margin-left: 20px;
+  height: 20px;
 
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CafeteriaManagement</title>
+    <title>  CafeteriaManagement  </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,13 +15,14 @@
       <p class=User-name>
       Welcome <%=@current_user.first_name%>
       </p>
+      <div class="UserHeader2">
       <% if @role=="customer"%>
-         <%= link_to "my order", my_orders_path, method:"get"%>
+         <%= link_to "My orders", my_orders_path, method:"get"%>
       <% end %>
-      </p>
-      <p>
+      <p class="Sign-out">
       <%= link_to "Sign-out", destroy_session_path, method:"delete"%>
       </p>
+      </div>
       </div>
     <% end %>
 
@@ -32,7 +33,7 @@
     <% end %>
 
     <% if flash[:notice]%>
-      <p class="Flash-error">
+      <p class="Flash-notice">
       <%= flash[:notice]%>
       </p>
     <% end %>

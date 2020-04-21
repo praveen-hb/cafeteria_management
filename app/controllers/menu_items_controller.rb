@@ -28,10 +28,6 @@ class MenuItemsController < ApplicationController
     redirect_to menu_items_path
   end
 
-  def refreshpath
-    redirect_to menu_items_cart_items_path
-  end
-
   def cart_items
     @menu_items = MenuItem.get_current_items
     @menu_ids = @menu_items.map { |item| item.id }
@@ -46,7 +42,6 @@ class MenuItemsController < ApplicationController
     menu_item.price = params[:price]
     menu_item.description = params[:description]
     menu_item.save!
-    #redirect_to refresh_cart_path
     redirect_to(request.env["HTTP_REFERER"])
   end
 
@@ -63,11 +58,11 @@ class MenuItemsController < ApplicationController
         else
           @current_user.cart[i] -= 1
         end
+        break
       end
       i += 1
     end
     @current_user.save!
-    #redirect_to menu_items_cart_items_path
     redirect_to(request.env["HTTP_REFERER"])
   end
 

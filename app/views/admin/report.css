@@ -1,0 +1,23 @@
+.ReportPage {
+  margin-top: 60px;
+}
+
+.From-date{
+  font-family:OpenSans;
+  padding:6px 8px;
+  font-size:14px;
+  color:#726A7E;
+  margin-right: 30px;
+  border-radius:4px;
+  border:1px solid #BFB8CC;
+}
+
+.To-date{
+  font-family:OpenSans;
+  padding:6px 8px;
+  font-size:14px;
+  color:#726A7E;
+  margin-left: 10px;
+  border-radius:4px;
+  border:1px solid #BFB8CC;
+}

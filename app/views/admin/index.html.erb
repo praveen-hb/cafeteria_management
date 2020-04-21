@@ -1,26 +1,40 @@
 <main class="MenuPage">
-  <p class="Admin-option">To edit menu
-    <%= link_to "click here", menus_path%>
+
+<div class="split left">
+  <div class="centered">
+    <img src="/admin.png" class="centered img">
+  </div>
+
+</div>
+
+<div class="split right">
+ <div class="top">
+
+  <p class="Admin-option">
+    <%= link_to "To edit menu", menus_path%>
   </p>
 
-  <p class="Admin-option">View pending orders
-    <%= link_to "click here", orders_path %>
+  <p class="Admin-option">
+    <%= link_to "View pending orders", orders_path %>
   </p>
 
-  <p class="Admin-option">All the users
-    <%= link_to "click here", users_info_path %>
+  <p class="Admin-option">
+     <%= link_to "All the users", users_info_path %>
   </p>
 
-
-  <p class="Admin-option">Add Users
-    <%= link_to "click here", users_add_user_page_path %>
+  <p class="Admin-option">
+    <%= link_to "Add Users", users_add_user_page_path %>
   </p>
 
-  <p class="Admin-option">Place orders
-  <%= link_to "click here", menu_items_path%>
+  <p class="Admin-option">
+  <%= link_to "Place orders", menu_items_path%>
+  </p>
 
-  <p class="Admin-option">View Reports
-  <%= link_to "click here", invoice_bills_path%>
+  <p class="Admin-option">
+    <%= link_to "View Reports", invoice_bills_path%>
+  </p>
 
+</div>
+</div>
 
 </main>

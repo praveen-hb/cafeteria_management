@@ -2,6 +2,13 @@
   margin-bottom: 60px;
 }
 
+.Admin-image {
+  width: 400px;
+  height: 400px;
+
+  margin-left:0px;
+}
+
 .Error-title {
   font-weight: 800;
   font-family: fantasy;
@@ -30,5 +37,63 @@
 
 .Admin-option {
   font-size: 32px;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+ /* Split the screen in half */
+ .split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+
+}
+
+.top{
+  position: absolute;
+  top:50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 300px;
+  border-radius: 50%;
+}
+
+.logo{
+  width:150px;
+}
+
+.admin-text{
+  font-weight: 300;
+  font-size: 30px;
 
 }

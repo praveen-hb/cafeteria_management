@@ -34,6 +34,7 @@
     </section>
     </ul>
     <%= form_with(url: "/orders", method: "POST",class: "AddOrder") do %>
+      <%= hidden_field_tag "value",MenuItem.get_cart_value(@id_quantity)%>
       <%= submit_tag "Place Order", class: "AddOrder-button"%>
     <% end %>
   <% else %>

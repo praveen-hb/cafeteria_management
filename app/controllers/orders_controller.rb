@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
       render "/admin/error"
     else
       @not_delivered_orders = Order.not_delivered
-      render "orders/show"
+      render "index"
     end
   end
 
@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
       date: Date.today,
       user_id: @current_user.id,
       delivered_at: nil,
+      value: params[:value].to_i,
     )
     new_order.save!
     redirect_to "/order_items/#{new_order.id}/edit"
@@ -26,9 +27,14 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
+  def invoices
+    @orders = Order.get_list(params[:from], params[:to])
+    render "invoices"
+  end
+
   def display
     @not_delivered_orders = Order.not_delivered_user(current_user.id)
     @delivered_orders = Order.delivered_user(current_user.id)
-    render "orders/index"
+    render "orders/show"
   end
 end

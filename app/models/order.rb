@@ -36,4 +36,8 @@ class Order < ActiveRecord::Base
     end
     order_items
   end
+
+  def self.get_list(from, to)
+    Order.all.where("data >= ? and date <= ?", from, to)
+  end
 end

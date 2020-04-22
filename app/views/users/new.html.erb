@@ -1,17 +1,9 @@
-<style>
-body{
-  background-image: url('sign.jpg');
-  background-repeat:no-repeat;
-  background-attachment: fixed;
-  background-size: cover
-}
-</style>
 
+<body>
 <p class="NewUsers-title"> Welcome new user! </p>
-
 <section class="UsersNew" style="background-image: url('signin.jpg');">
   <%= form_with url: users_path do |form| %>
-    <div class="Form-section">
+    <div class="Form-section" >
       <p class="FormInput-label"> First name: </p>
       <%= form.text_field :first_name, class: "Form-input", autofocus: true %>
     </div>
@@ -41,3 +33,4 @@ body{
 </h3>
 
 </section>
+</body>

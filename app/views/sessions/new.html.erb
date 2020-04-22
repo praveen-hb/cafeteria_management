@@ -1,6 +1,6 @@
 <style>
 body{
-  background-image: url('signin.jpg');
+  background-image: url('');
   background-repeat:no-repeat;
   background-attachment: fixed;
   background-size: cover
@@ -24,6 +24,10 @@ body{
       <%= form.submit "Sign-in!", class: "Form-submit"%>
     </div>
   <% end %>
+  <h3 class="Home-authenticate">
+  New to the Cafeteria Management,
+  <%= link_to "sign-up here", new_user_path%>
+</h3>
 
 </section>
 </body>

@@ -1,5 +1,13 @@
+<style>
+body{
+  background-image: url('home2.jpg');
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size: cover
+}
+</style>
+<body>
 <h1 class="Home-title"> Welcome to Cafeteria management </h1>
-<img src="/home.jpg" class="Home-image">
 <h3 class="Home-authenticate">
   New to the Cafeteria Management,
   <%= link_to "sign-up here", new_user_path%>
@@ -9,3 +17,4 @@
   Already have an account,
   <%= link_to "sign-in here", new_sessions_path%>
 </h3>
+</body>

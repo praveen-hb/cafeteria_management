@@ -1,7 +1,7 @@
 <section class="Cart">
   <h1 class="Cart-title"> Items in cart: </h1>
   <ul class="Menu-items">
-    <% if @current_user.cart!=[] %>
+    <% if @current_user.cart!=[] and MenuItem.get_cart_value(@id_quantity)!=0 %>
         <li class="Menu-item">
           <p align="left" class="MenuItem-nameHead">Item-name </p>
           <p align="right" class="MenuItem-priceHead">Price </p>

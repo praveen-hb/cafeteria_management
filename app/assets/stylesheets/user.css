@@ -1,6 +1,6 @@
 .NewUsers-title{
   margin-bottom: 40px;
-  font-size: 30px;
+  font-size: 60px;
 }
 
 .Form-section {
@@ -10,19 +10,26 @@
 .Form-input {
   font-size: 20px;
   padding: 8px;
+  background-color: rgb(145, 150, 101);
+  color:white;
 }
 
 .FormInput-label {
   color: #555555;
   margin-bottom: 8px;
+  font-weight:800;
+  color: white;
+  font-size: 24px;
 }
 
 .Form-submit {
   font-size: 20px;
   padding: 20px;
-  background-color: #24856120;
+  background-color: green;
+  color: black;
   border: 0;
   border-radius: 8px;
+
 }
 
 .User-attribute-heading{

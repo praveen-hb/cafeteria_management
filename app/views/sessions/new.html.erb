@@ -1,6 +1,16 @@
+<style>
+body{
+  background-image: url('signin.jpg');
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size: cover
+}
+</style>
+
+<body class="Sign-in">
 <p class="NewUsers-title"> Sign-in! </p>
 
-<section class="UsersNew">
+<section class="UsersNew" >
   <%= form_with url: sessions_path do |form| %>
     <div class="Form-section">
       <p class="FormInput-label"> email: </p>
@@ -16,3 +26,4 @@
   <% end %>
 
 </section>
+</body>

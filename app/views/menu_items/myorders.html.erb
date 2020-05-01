@@ -1,7 +1,7 @@
 <main class="MenuPage">
 <% if @delivered_orders!=[] or @not_delivered_orders!=[] %>
   <%if @delivered_orders!=[]%>
-  <h1 class="Myorders-title">Past orders </h1>
+    <h1 class="Myorders-title">Past orders </h1>
     <% @delivered_orders.each do |order| %>
       <li class="User-item">
         <p class="Order-bold">
@@ -41,16 +41,16 @@
   <%end %>
   <% if @not_delivered_orders!=[]%>
   <h1 class="Myorders-title"> Pending orders </h1>
-  <% @not_delivered_orders.each do |order| %>
-    <li class="User-item">
-      <p class="Order-bold">
-        Order number:
-      </p>
-      <p class="Order-name">
-        <%= order.id%>
-      </p>
-    </li>
-    <table class="Table">
+    <% @not_delivered_orders.each do |order| %>
+      <li class="User-item">
+        <p class="Order-bold">
+          Order number:
+        </p>
+        <p class="Order-name">
+          <%= order.id%>
+        </p>
+      </li>
+      <table class="Table">
         <tr class="Table-row">
           <th class="MenuItem-nameHead"> Item name </th>
           <th class="MenuItem-priceHead"> Price</th>
@@ -67,13 +67,11 @@
             </li>
           <% end %>
         <% end %>
-    </table>
+      </table>
+    <% end %>
   <% end %>
-  <%end%>
-<% else %>
-  <h1 class="Error-message"> No orders till date</h1>
-<% end %>
-
-    <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menu_items'"%>
-
+  <% else %>
+    <h1 class="Error-message"> No orders till date</h1>
+  <% end %>
+  <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menu_items'"%>
 </main>

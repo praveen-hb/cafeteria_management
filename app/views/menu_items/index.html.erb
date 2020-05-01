@@ -1,16 +1,16 @@
 <main class="MenuPage">
-   <% if @role!="customer"%>
-  <h1 class="Walk-in"> Walk-in-Customer </h1>
+  <% if @role!="customer"%>
+    <h1 class="Walk-in"> Walk-in-Customer </h1>
   <% end %>
   <h1 class="MenuPage-title"> Available items </h1>
   <section class="Menu-items">
     <ul>
-    <li class="Menu-item">
-      <p align="left" class="MenuItem-nameHead">Item-Name</p>
-      <p align="left" class="MenuItem-descHead"> Description </p>
-      <p align="right" class="MenuItem-priceHead">Price</p>
-      <p align="right" class="MenuItem-quantityHead"> Quantity</p>
-    </li>
+      <li class="Menu-item">
+        <p align="left" class="MenuItem-nameHead">Item-Name</p>
+        <p align="left" class="MenuItem-descHead"> Description </p>
+        <p align="right" class="MenuItem-priceHead">Price</p>
+        <p align="right" class="MenuItem-quantityHead"> Quantity</p>
+      </li>
       <%= form_with(url: "/menu_items/cart", method: "POST") do %>
         <% @menu_items.each do |item| %>
           <li class="Menu-item">
@@ -21,16 +21,15 @@
           </li>
         <% end %>
       <div class= "Carts">
-      <%= submit_tag "Add to cart", class: "MenuItems-cart"%>
-    <% end %>
-    <%= submit_tag "My cart", class: "MenuItems-cart",onclick:"location.href='/menu_items/cart_items'"%>
+        <%= submit_tag "Add to cart", class: "MenuItems-cart"%>
+      <% end %>
+      <%= submit_tag "My cart", class: "MenuItems-cart",onclick:"location.href='/menu_items/cart_items'"%>
       </div>
     </ul>
   </section>
   <% if @role=="owner"%>
-  <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/admin'"%>
+    <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/admin'"%>
   <%elsif @role=="clerk"%>
-  <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/clerk'"%>
+    <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/clerk'"%>
   <% end %>
-
 </main>

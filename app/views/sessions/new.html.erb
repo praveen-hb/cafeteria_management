@@ -8,26 +8,24 @@ body{
 </style>
 
 <body class="Sign-in">
-<p class="NewUsers-title"> Sign-in! </p>
-
-<section class="UsersNew" >
-  <%= form_with url: sessions_path do |form| %>
-    <div class="Form-section">
-      <p class="FormInput-label"> email: </p>
-      <%= form.email_field :email, class: "Form-input", autofocus: true %>
-    </div>
-    <div class="Form-section">
-      <p class="FormInput-label"> password: </p>
-      <%= form.password_field :password, class: "Form-input" %>
-    </div>
-    <div class="Form-section">
-      <%= form.submit "Sign-in!", class: "Form-submit"%>
-    </div>
-  <% end %>
-  <h3 class="Home-authenticate">
-  New to the Cafeteria Management,
-  <%= link_to "sign-up here", new_user_path%>
-</h3>
-
-</section>
+  <p class="NewUsers-title"> Sign-in! </p>
+  <section class="UsersNew" >
+    <%= form_with url: sessions_path do |form| %>
+      <div class="Form-section">
+        <p class="FormInput-label"> email: </p>
+        <%= form.email_field :email, class: "Form-input", autofocus: true %>
+      </div>
+      <div class="Form-section">
+        <p class="FormInput-label"> password: </p>
+        <%= form.password_field :password, class: "Form-input" %>
+      </div>
+      <div class="Form-section">
+        <%= form.submit "Sign-in!", class: "Form-submit"%>
+      </div>
+    <% end %>
+    <h3 class="Home-authenticate">
+      New to the Cafeteria Management,
+      <%= link_to "sign-up here", new_user_path%>
+    </h3>
+  </section>
 </body>

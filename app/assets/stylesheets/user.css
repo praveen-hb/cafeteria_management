@@ -3,6 +3,21 @@
   font-size: 60px;
 }
 
+.User-info-title {
+  font-weight: 600;
+  font-size: 32px;
+  color: rgb(26, 23, 23);
+  margin-bottom: 0px;
+}
+
+.UserPage{
+  margin-top: 60px;
+}
+
+.User-info-section{
+  margin-top: 40px;
+}
+
 .Form-section {
   margin-bottom: 30px;
 }

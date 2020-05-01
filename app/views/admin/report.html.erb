@@ -1,20 +1,20 @@
 <main class="ReportPage">
-    <%= form_with(url: "/orders/invoices", method: "POST", class: "AddOrder") do %>
-      <ul class="Invoice-item">
-        <h1>FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %> </h1>
-        <h1>TO: <%= date_field_tag 'to_date',nil, class: "To-date" %> </h1>
-        <h1> <%= submit_tag "View all Reports", class: "Invoice-allOrder"%> </h1>
-      </ul>
-    <% end %>
+  <%= form_with(url: "/orders/invoices", method: "POST", class: "AddOrder") do %>
+    <ul class="Invoice-item">
+      <h1>FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %> </h1>
+      <h1>TO: <%= date_field_tag 'to_date',nil, class: "To-date" %> </h1>
+      <h1> <%= submit_tag "View all Reports", class: "Invoice-allOrder"%> </h1>
+    </ul>
+   <% end %>
 
-    <%= form_with(url: "/orders/customer_invoices", method: "POST",class: "AddOrder") do %>
-      <ul class="Invoice-item">
-        <h1> FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %> </h1>
-        <h1> TO: <%= date_field_tag 'to_date',nil, class: "To-date" %> </h1>
-        <h1 class="Customer-id"> CustomerID: <%= number_field_tag "customer_id",nil, placeholder:"customer-id", class: "ID-input"%> </h1>
-        <h1> <%= submit_tag "View customer Report", class: "Invoice-order"%> </h1>
-      </ul>
-    <% end %>
+  <%= form_with(url: "/orders/customer_invoices", method: "POST",class: "AddOrder") do %>
+    <ul class="Invoice-item">
+      <h1> FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %> </h1>
+      <h1> TO: <%= date_field_tag 'to_date',nil, class: "To-date" %> </h1>
+      <h1 class="Customer-id"> CustomerID: <%= number_field_tag "customer_id",nil, placeholder:"customer-id", class: "ID-input"%> </h1>
+      <h1> <%= submit_tag "View customer Report", class: "Invoice-order"%> </h1>
+    </ul>
+  <% end %>
 
   <% if @orders %>
     <h1 class="Invoice-title"> All Invoice bills </h1>
@@ -36,6 +36,4 @@
       <% end %>
     </ul>
   <%end %>
-
-
 </main>

@@ -1,29 +1,29 @@
-<main class="MenuPage">
-  <h1 class="MenuPage-title"> Available Users </h1>
-  <section class="Menu-items">
+<main class="UserPage">
+  <h1 class="User-info-title"> Available Users </h1>
+  <section class="User-info-section">
     <ul>
       <h1 class="User-title"> Customers </h1>
-        <% @users_customer.each do |user| %>
-          <li class="User-item">
-            <p class="User-bold">
-              Name:
-            </p>
-            <p class= "User-name">
-             <%= user.first_name%> <%= user.last_name%>
-            </p>
-            <p class="User-bold">
-              Email:
-            </p>
-            <p class= "User-email">
-              <%=user.email%>
-            </p>
-            <%= form_with(url: "/users/#{user.id}", method: "DELETE") do %>
+      <% @users_customer.each do |user| %>
+        <li class="User-item">
+          <p class="User-bold">
+            Name:
+          </p>
+          <p class= "User-name">
+            <%= user.first_name%> <%= user.last_name%>
+          </p>
+          <p class="User-bold">
+            Email:
+          </p>
+          <p class= "User-email">
+            <%=user.email%>
+          </p>
+          <%= form_with(url: "/users/#{user.id}", method: "DELETE") do %>
             <%= image_submit_tag "/trashcan.svg", class: "UserItem-delete" %>
           <% end %>
-            </li>
-        <% end %>
-      </ul>
-      <ul>
+        </li>
+      <% end %>
+    </ul>
+    <ul>
       <h1 class="User-title"> Clerks </h1>
         <% @users_clerk .each do |user| %>
           <li class="User-item">
@@ -40,14 +40,10 @@
               <%=user.email%>
             </p>
             <%= form_with(url: "/users/#{user.id}", method: "DELETE") do %>
-            <%= image_submit_tag "/trashcan.svg", class: "UserItem-delete" %>
-          <% end %>
-            </li>
+              <%= image_submit_tag "/trashcan.svg", class: "UserItem-delete" %>
+            <% end %>
+          </li>
         <% end %>
-      </ul>
-
-
-
-
+    </ul>
   </section>
 </main>

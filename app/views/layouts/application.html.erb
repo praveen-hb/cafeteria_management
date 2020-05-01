@@ -4,7 +4,6 @@
     <title>  CafeteriaManagement  </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -21,29 +20,29 @@ body{
  <body class="Menu-body">
     <% if @current_user %>
       <div class="UserHeader">
-      <p class=User-name>
-      Welcome <%=@current_user.first_name%>
-      </p>
-      <div class="UserHeader2">
-      <% if @role=="customer"%>
-         <%= link_to "My orders", my_orders_path, method:"get"%>
-      <% end %>
-      <p class="Sign-out">
-      <%= link_to "Sign-out", destroy_session_path, method:"delete"%>
-      </p>
-      </div>
+        <p class=User-name>
+          Welcome <%=@current_user.first_name%>
+        </p>
+        <div class="UserHeader2">
+          <% if @role=="customer"%>
+            <%= link_to "My orders", my_orders_path, method:"get"%>
+          <% end %>
+          <p class="Sign-out">
+            <%= link_to "Sign-out", destroy_session_path, method:"delete"%>
+          </p>
+        </div>
       </div>
     <% end %>
 
     <% if flash[:error]%>
       <p class="Flash-error">
-      <%= flash[:error]%>
+        <%= flash[:error]%>
       </p>
     <% end %>
 
     <% if flash[:notice]%>
       <p class="Flash-notice">
-      <%= flash[:notice]%>
+        <%= flash[:notice]%>
       </p>
     <% end %>
     <%= yield %>

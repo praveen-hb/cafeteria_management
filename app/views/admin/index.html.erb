@@ -8,44 +8,40 @@ body{
 </style>
 
 <body>
-<main class="MenuPage">
-<%#<div class="split-horizontal-top"> </div>
-<div class="split-horizontal-bot">#%>
-<div class="split left">
-  <div class="centered">
-    <img src="/admin.png" class="centered img">
-  </div>
-</div>
+  <main class="MenuPage">
+    <div class="split left">
+      <div class="centered">
+        <img src="/admin.png" class="centered img">
+      </div>
+    </div>
 
-<div class="split right">
- <div class="top">
+    <div class="split right">
+      <div class="top">
+        <p class="Admin-option">
+          <%= link_to "Edit menu", menus_path%>
+        </p>
 
-  <p class="Admin-option">
-    <%= link_to "Edit menu", menus_path%>
-  </p>
+        <p class="Admin-option">
+          <%= link_to "View pending orders", orders_path %>
+        </p>
 
-  <p class="Admin-option">
-    <%= link_to "View pending orders", orders_path %>
-  </p>
+        <p class="Admin-option">
+          <%= link_to "All the users", users_info_path %>
+        </p>
 
-  <p class="Admin-option">
-     <%= link_to "All the users", users_info_path %>
-  </p>
+        <p class="Admin-option">
+          <%= link_to "Add Users", users_add_user_page_path %>
+        </p>
 
-  <p class="Admin-option">
-    <%= link_to "Add Users", users_add_user_page_path %>
-  </p>
+        <p class="Admin-option">
+          <%= link_to "Place orders", menu_items_path%>
+        </p>
 
-  <p class="Admin-option">
-  <%= link_to "Place orders", menu_items_path%>
-  </p>
+        <p class="Admin-option">
+          <%= link_to "View Reports", invoice_bills_path%>
+        </p>
 
-  <p class="Admin-option">
-    <%= link_to "View Reports", invoice_bills_path%>
-  </p>
-
-</div>
-</div>
-<%#</div>%>
-</main>
+      </div>
+    </div>
+  </main>
 </body>

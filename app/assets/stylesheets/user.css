@@ -74,8 +74,16 @@
 .User-bold {
   font-weight: 600;
   font-size: 24px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
+
+.User-id{
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 40px;
+}
+
+
 
 .User-title {
   font-weight: 550;

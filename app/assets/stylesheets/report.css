@@ -113,7 +113,13 @@
 
 .Invoice-item {
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.Invoice-button{
+  display: flex;
+  margin-bottom: 40px;
+
 }
 
 .Invoice-item:hover {

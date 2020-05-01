@@ -5,6 +5,12 @@
       <h1 class="User-title"> Customers </h1>
       <% @users_customer.each do |user| %>
         <li class="User-item">
+          <p class="User-id">
+            Id:
+          </p>
+          <p class= "User-email">
+            <%=user.id%>
+          </p>
           <p class="User-bold">
             Name:
           </p>
@@ -17,6 +23,8 @@
           <p class= "User-email">
             <%=user.email%>
           </p>
+
+
           <%= form_with(url: "/users/#{user.id}", method: "DELETE") do %>
             <%= image_submit_tag "/trashcan.svg", class: "UserItem-delete" %>
           <% end %>
@@ -38,6 +46,12 @@
             </p>
             <p class= "User-email">
               <%=user.email%>
+            </p>
+            <p class="User-id">
+              id:
+            </p>
+            <p class= "User-email">
+              <%=user.id%>
             </p>
             <%= form_with(url: "/users/#{user.id}", method: "DELETE") do %>
               <%= image_submit_tag "/trashcan.svg", class: "UserItem-delete" %>

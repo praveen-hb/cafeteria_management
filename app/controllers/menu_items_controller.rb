@@ -25,7 +25,8 @@ class MenuItemsController < ApplicationController
       end
     end
     @current_user.save!
-    redirect_to menu_items_path
+    #redirect_to menu_items_path
+    redirect_to menu_items_cart_items_path
   end
 
   def cart_items

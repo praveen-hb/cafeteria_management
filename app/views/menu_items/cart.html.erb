@@ -19,19 +19,19 @@ body{
       <% @id_quantity.each do |item,quantity| %>
         <% if quantity and quantity>0 %>
           <li class="Menu-item">
-            <p align="left" class="MenuItem-name"> <%= MenuItem.find(item).name%> </p>
-            <p align="right" class="MenuItem-price"> <%= MenuItem.find(item).price%> </p>
-            <p align="right" class="MenuItem-quantity"> <%= quantity%> </p>
+            <p align="left" class="MenuItem-name"> <%= MenuItem.find(item).name %> </p>
+            <p align="right" class="MenuItem-price"> <%= MenuItem.find(item).price %> </p>
+            <p align="right" class="MenuItem-quantity"> <%= quantity %> </p>
             <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
-              <%= hidden_field_tag "op","up"%>
+              <%= hidden_field_tag "op","up" %>
               <p> <%= image_submit_tag "/plus.png", class: "MenuItem-up" %> </p>
             <% end %>
             <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
-              <%= hidden_field_tag "op","down"%>
+              <%= hidden_field_tag "op","down" %>
               <p> <%= image_submit_tag "/minus.png", class: "MenuItem-down" %> </p>
             <% end %>
             <%= form_with(url: "/menu_items/#{item}", method: "put") do %>
-              <%= hidden_field_tag "op","del"%>
+              <%= hidden_field_tag "op","del" %>
               <p> <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %> </p>
             <% end %>
           </li>
@@ -39,16 +39,16 @@ body{
       <% end %>
       <section class="Menu-itemsTotal">
         <h1 class="Cart-total">  Total Cart Value: </h1>
-        <h1 class="Cart-totalValue"> <%= MenuItem.get_cart_value(@id_quantity)%></h1>
+        <h1 class="Cart-totalValue"> <%= MenuItem.get_cart_value(@id_quantity) %></h1>
       </section>
 
       <%= form_with(url: "/orders", method: "POST",class: "AddOrder") do %>
-        <%= hidden_field_tag "value",MenuItem.get_cart_value(@id_quantity)%>
-        <%= submit_tag "Place Order", class: "AddOrder-button"%>
+        <%= hidden_field_tag "value",MenuItem.get_cart_value(@id_quantity) %>
+        <%= submit_tag "Place Order", class: "AddOrder-button" %>
       <% end %>
     <% else %>
       <h1 class= "Cart-total"> Cart is empty! Go back and add your favorite items </h1>
     <% end %>
    </ul>
-  <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menu_items'"%>
+  <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menu_items'" %>
 </section>

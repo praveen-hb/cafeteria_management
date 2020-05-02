@@ -1,5 +1,5 @@
 <main class="ReportPage">
-  <%= form_with(url: "/orders/invoices", method: "POST", class: "AddOrder") do %>
+  <%= form_with(url: "/orders/invoices", method: "POST") do %>
     <ul class="Invoice-item">
       <h1>FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %> </h1>
       <h1>TO: <%= date_field_tag 'to_date',nil, class: "To-date" %> </h1>
@@ -7,7 +7,7 @@
     </ul>
    <% end %>
 
-  <%= form_with(url: "/orders/customer_invoices", method: "POST",class: "AddOrder") do %>
+  <%= form_with(url: "/orders/customer_invoices", method: "POST") do %>
     <ul class="Invoice-item">
       <h1> FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %> </h1>
       <h1> TO: <%= date_field_tag 'to_date',nil, class: "To-date" %> </h1>

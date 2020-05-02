@@ -20,11 +20,10 @@
             <p align="right" class="MenuItem-quantity"> <%= number_field_tag item.id.to_s.to_sym,0,class: "MenuItem-quantity",min: 0%> </p>
           </li>
         <% end %>
-        <div class= "Carts">
+        <div class= "Continue-cart">
           <%= submit_tag "continue", class: "MenuItems-cart"%>
+        </div>
       <% end %>
-      <%#<%= submit_tag "My cart", class: "MenuItems-cart",onclick:"location.href='/menu_items/cart_items'"%>
-      </div>
     </ul>
   </section>
   <% if @role=="owner"%>

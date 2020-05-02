@@ -133,3 +133,9 @@
 .Invoice-items {
   margin-top: 30px;
 }
+
+.NoBills-message {
+  margin-top: 100px;
+  font-weight: 800;
+  font-size: 24px;
+}

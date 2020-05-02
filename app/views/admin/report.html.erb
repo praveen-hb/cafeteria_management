@@ -3,8 +3,6 @@
     <ul class="Invoice-item">
       <h1>FROM: <%= date_field_tag 'from_date',nil, class: "From-date" %> </h1>
       <h1>TO: <%= date_field_tag 'to_date',nil, class: "To-date" %> </h1>
-    <%#</ul>
-    <ul class="Invoice-button">%>
       <h1> <%= submit_tag "View all Reports", class: "Invoice-allOrder"%> </h1>
     </ul>
    <% end %>
@@ -21,23 +19,29 @@
   <% end %>
 
   <% if @orders %>
-    <h1 class="Invoice-title"> All Invoice bills </h1>
-    <ul class="Invoice-items">
-      <li class="Invoice-item">
-        <h2 align="center" class="Order-idHead"> Order-id </h2>
-        <h2 align="left" class="OrderedUser-nameHead"> User-Name </h2>
-        <h2 align="center" class="OrderItems-head"> Items </h2>
-        <h2 align="right" class="Order-valueHead"> Total Bill </h2>
-      </li>
-      <% @orders.each do |order|%>
-        <li class="Invoice-item" >
-          <h2 align="center" class="Order-id"> <%= order["id"]%> </h2>
-          <h2 align="left" class="OrderedUser-name"> <%= User.find(order["user_id"]).first_name %> <%= User.find(order["user_id"]).last_name %> </h2>
-          <h2 align="center" class="OrderItems"> <%= Order.find(order["id"]).order_items.count%> </h2>
-          <h2 align="right" class="Order-value"> <%= order["value"] %> </h2>
-          <h2 align="left"><%= image_submit_tag  "/info.png",class: "Invoice-info",onclick: "location.href='/orders/#{order["id"]}'" %></h2>
+    <% if @orders!=[] %>
+      <h1 class="Invoice-title"> All Invoice bills </h1>
+      <ul class="Invoice-items">
+        <li class="Invoice-item">
+          <h2 align="center" class="Order-idHead"> Order-id </h2>
+          <h2 align="left" class="OrderedUser-nameHead"> User-Name </h2>
+          <h2 align="center" class="OrderItems-head"> Items </h2>
+          <h2 align="right" class="Order-valueHead"> Total Bill </h2>
         </li>
-      <% end %>
-    </ul>
+        <% @orders.each do |order|%>
+          <% if User.exists?(id = order["user_id"])%>
+            <li class="Invoice-item" >
+              <h2 align="center" class="Order-id"> <%= order["id"]%> </h2>
+              <h2 align="left" class="OrderedUser-name"> <%= User.find(order["user_id"]).first_name %> <%= User.find(order["user_id"]).last_name %> </h2>
+              <h2 align="center" class="OrderItems"> <%= Order.find(order["id"]).order_items.count%> </h2>
+              <h2 align="right" class="Order-value"> <%= order["value"] %> </h2>
+              <h2 align="left"><%= image_submit_tag  "/info.png",class: "Invoice-info",onclick: "location.href='/orders/#{order["id"]}'" %></h2>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% else %>
+      <h1 class="NoBills-message"> Sorry! No bills available in selected date </h1>
+    <% end %>
   <%end %>
 </main>

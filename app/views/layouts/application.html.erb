@@ -23,26 +23,26 @@ body{
         <p class=User-name>
           Welcome <%=@current_user.first_name%>
         </p>
-        <div class="UserHeader2">
-          <% if @role=="customer"%>
-            <%= link_to "My orders", my_orders_path, method:"get"%>
+        <div class="User-header">
+          <% if @role=="customer" %>
+            <%= link_to "My orders", my_orders_path, method:"get" %>
           <% end %>
           <p class="Sign-out">
-            <%= link_to "Sign-out", destroy_session_path, method:"delete"%>
+            <%= link_to "Sign-out", destroy_session_path, method:"delete" %>
           </p>
         </div>
       </div>
     <% end %>
 
-    <% if flash[:error]%>
+    <% if flash[:error] %>
       <p class="Flash-error">
         <%= flash[:error]%>
       </p>
     <% end %>
 
-    <% if flash[:notice]%>
+    <% if flash[:notice] %>
       <p class="Flash-notice">
-        <%= flash[:notice]%>
+        <%= flash[:notice] %>
       </p>
     <% end %>
     <%= yield %>

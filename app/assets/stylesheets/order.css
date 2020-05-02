@@ -7,6 +7,10 @@
   margin-bottom: 10px;
 }
 
+.Order-User{
+  display: flex;
+}
+
 .AddMenuItem-button{
   margin-top: 10px;
   font-weight: 500;

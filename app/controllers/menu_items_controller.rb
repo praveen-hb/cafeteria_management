@@ -72,7 +72,7 @@ class MenuItemsController < ApplicationController
     menu_item_price = params[:price]
     description = params[:description]
     id = params[:id]
-    menu = MenuItem.create!(
+    menu = MenuItem.new(
       name: menu_item_name,
       price: menu_item_price,
       menu_id: id,
@@ -85,7 +85,12 @@ class MenuItemsController < ApplicationController
         user.save!
       end
     end
-    redirect_to(request.env["HTTP_REFERER"])
+    if menu.save
+      redirect_to(request.env["HTTP_REFERER"])
+    else
+      flash[:error] = menu.errors.full_messages.join(", ")
+      redirect_to(request.env["HTTP_REFERER"])
+    end
   end
 
   def destroy

@@ -17,10 +17,15 @@ class MenusController < ApplicationController
 
   def create
     menu_name = params[:name]
-    menu = Menu.create!(
+    menu = Menu.new(
       name: menu_name,
     )
-    redirect_to menus_path
+    if menu.save
+      redirect_to menus_path
+    else
+      flash[:error] = menu.errors.full_messages.join(", ")
+      redirect_to menus_path
+    end
   end
 
   def edit

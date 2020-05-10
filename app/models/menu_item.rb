@@ -1,5 +1,7 @@
 class MenuItem < ApplicationRecord
   belongs_to :menu
+  validates :name, presence: true
+  validates :price, presence: true
 
   def self.selected
     MenuItem.all.where(selected: true)

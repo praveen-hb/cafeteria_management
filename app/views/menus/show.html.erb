@@ -16,7 +16,7 @@
     </ul>
   </section>
   <div>
-  <h1 class="MenuPage-title"> Add a Menu-Item in <%= @name%> Menu</h1>
+  <h1 class="Menu-Text"> Add a Menu-Item in <%= @name%> Menu</h1>
     <%= form_with(url: "/menu_items",method: "post",class: "AddMenuItem") do %>
       <%= text_field_tag 'name', nil, class: 'AddMenuItem-name', placeholder: "enter menu item" , autofocus: true%>
       <%= text_field_tag 'description', nil, class: 'AddMenuItem-description', placeholder: "enter menu description"%>

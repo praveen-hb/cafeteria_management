@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
-      role: params[:role],
+      role: "customer",
       password: params[:password],
     )
     if new_user.save

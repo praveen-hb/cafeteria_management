@@ -55,7 +55,12 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
-    user.destroy
+    @not_delivered_orders = Order.not_delivered_user(user.id)
+    if @not_delivered_orders.length() != 0
+      flash[:notice] = "Deliver the pending orders to delete user #{@not_delivered_orders.length()}"
+    else
+      user.destroy
+    end
     redirect_to users_info_path
   end
 end

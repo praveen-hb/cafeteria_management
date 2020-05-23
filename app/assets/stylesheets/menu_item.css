@@ -95,12 +95,12 @@
   display: flex;
   margin-bottom: 10px;
 }
-
 .MenuItem-name {
   margin-left: 10px;
   font-size: 24px;
-  width: 200px;
+  width: 175px;
 }
+
 
 .MenuItem-descHead {
   margin-left: 30px;
@@ -108,7 +108,7 @@
   width: 150px;
   font-weight: 500;
   font-style: oblique;
-  color:rgb(208, 211, 16);
+  color:black;
 }
 
 .MenuItem-desc {
@@ -118,41 +118,50 @@
 
 
 .MenuItem-price {
-
   font-size: 24px;
   width: 100px;
-  margin-left: 30px;
+  text-align: center;
 }
 
 .MenuItem-priceHead {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
   margin-left: 30px;
   width: 100px;
-  color:rgb(208, 211, 16);
+  color:black;
 }
 .MenuItem-quantityHead {
   font-size: 32px;
   margin-left: 20px;
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
   width: 100px;
-  color:rgb(208, 211, 16);
+  color:black;
+}
+.MenuItem-quantity {
+  text-align: center;
+  font-size: 24px;
+  width: 50px;
+
 }
 
 .MenuItem-nameHead {
   font-size: 32px;
-  font-weight: 500;
-  width: 200px;
+  font-weight: 400;
+  width: 175px;
   font-style: oblique;
-  color:rgb(208, 211, 16);
+  color:black;
+  text-align: left;
 
 }
 
 .Table {
   width: 100%;
 }
+
+
+
 
 .MenuItem-quantity {
   margin-left: 20px;
@@ -224,4 +233,8 @@ color: darkgreen;
   font-weight: 600;
   background-color: white;
   height: 40px;
+}
+
+.Table-row {
+  margin-bottom: 20px
 }

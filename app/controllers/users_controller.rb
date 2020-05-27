@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @not_delivered_orders = Order.not_delivered_user(user.id)
     if @not_delivered_orders.length() != 0
-      flash[:notice] = "Deliver the pending orders to delete user #{@not_delivered_orders.length()}"
+      flash[:notice] = "Deliver the pending orders to delete user"
     else
       user.destroy
     end

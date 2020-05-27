@@ -7,17 +7,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <style>
 body{
-  background-image: url('res11.jpg');
+  background-image: url('/res11.jpg');
   background-repeat:no-repeat;
   background-attachment: fixed;
   background-size: cover
 }
 </style>
-
- <body class="Menu-body">
+  <body class="Menu-body">
     <% if @current_user %>
       <div class="UserHeader">
         <p class=User-name>

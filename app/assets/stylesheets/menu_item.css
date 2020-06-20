@@ -227,12 +227,12 @@ color: darkgreen;
 }
 
 .MenuItem-back {
-  margin-top: 30px;
-  margin-left: 270px;
+  margin-top: 60px;
+  margin-left: 260px;
   color: black;
   font-weight: 600;
   background-color: white;
-  height: 40px;
+  height: 30px;
 }
 
 .Table-row {

@@ -35,8 +35,10 @@
 
 .Flash-error {
   color: darkred;
-  margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+
 }
 
 .Flash-notice {

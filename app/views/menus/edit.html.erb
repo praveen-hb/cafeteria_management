@@ -9,7 +9,7 @@
   <%= form_with(url: "/menus/#{@id}/update", method: "post",class: "Editing") do %>
     <%= text_field_tag "name",Menu.find(@id).name,class: "Edit-menuName",placeholder: "new menu name"%>
     <%= hidden_field_tag "id", @id%>
-    <%= submit_tag "update", class: "Submit-Button"%>
+    <%= submit_tag "update", class: "Submit-button"%>
   <% end %>
 </section>
 <%= submit_tag "Go Back", class: "Back" ,onclick:"location.href='/menus'"%>

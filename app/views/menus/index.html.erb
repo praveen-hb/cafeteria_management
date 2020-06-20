@@ -2,16 +2,19 @@
   <h1 class="Menu-Text"> List of menus </h1>
   <section class="MenuPage-items">
     <ul>
+      <%=Menu.resetID()%>
       <% Menu.all.order(:id).each do |menu|%>
         <li class="Menu-type">
-          <%#<h2 class="Menu-id"> <%= menu.id%>
-          <%= submit_tag  menu.name,class: "Menu-name",onclick: "location.href='/menus/#{menu.id}'" %></h2>
+          <h2 class="Menu-id"> <%= Menu.getID() %>.</h2>
+          <%= submit_tag  menu.name,class: "Menu-name",onclick: "location.href='/menus/#{menu.id}'" %>
           <%= image_submit_tag "/edit.png", class: "Menu-edit" ,onclick:"location.href='/menus/#{menu.id}/edit'"%>
           <%= form_with(url: "/menus/#{menu.id}", method: "DELETE") do %>
             <%= image_submit_tag "/trashcan.svg", class: "MenuItem-delete" %>
           <% end %>
         </li>
       <% end %>
+      <label class="hint">[HINT: Click on the menu name to view menu items] </label>
+
     </ul>
   </section>
   <div >
@@ -27,6 +30,7 @@
       <%= select_tag "Standard",
         options_for_select(Menu.all.order(:Standard).reverse.collect {|menu| menu.name}),
         include_blank: false,
+        class: "Standard-menu",
         :onchange => "this.form.submit()"
       %>
     <% end %>

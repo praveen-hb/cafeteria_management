@@ -2,9 +2,10 @@
   <h1 class="MenuPage-title"> Items in <%= @name%> Menu</h1>
   <section class="Menu-items">
     <ul>
+      <%=Menu.resetID()%>
       <% @menu_items.each do |item| %>
         <li class="Menu-item">
-          <%#<p class="Menu-itemId"> <%= item.id%> <%#</p>%>
+          <h2 class="Menu-id"> <%= Menu.getID() %>.</h2>
           <p class= "MenuItem-name"> <%= item.name%> </p>
           <p class= "MenuItem-price"> <%= item.price%> </p>
           <%= image_submit_tag "/edit.png", class: "MenuItem-edit" ,onclick:"location.href='/menu_items/#{item.id}/edit'"%>
@@ -13,6 +14,7 @@
           <% end %>
         </li>
       <% end %>
+      <label class="Hint"> [HINT: hover over the menu item to edit details] </label>
     </ul>
   </section>
   <div>

@@ -238,3 +238,49 @@ color: darkgreen;
 .Table-row {
   margin-bottom: 20px
 }
+
+.AddMenuItem-name {
+  height: 18px;
+  border-radius: 4px;
+  padding: 6px 22px;
+}
+.AddMenuItem-description {
+  height: 18px;
+  border-radius: 4px;
+  padding: 6px 22px;
+}
+.AddMenuItem-price {
+  height: 18px;
+  width: 50px;
+  margin-left: 10px;
+  border-radius: 4px;
+  padding: 6px 22px;
+}
+.Edit-menuItem {
+  display: flex;
+}
+
+.Edit-menuName {
+  height: 18px;
+  border-radius: 4px;
+  padding: 6px 22px;
+}
+.Edit-menudesc {
+  height: 18px;
+  border-radius: 4px;
+  padding: 6px 22px;
+  margin-left: 20px;
+}
+
+.Edit-price {
+  height: 18px;
+  border-radius: 4px;
+  padding: 6px 22px;
+  margin-left: 20px;
+  width: 50px;
+}
+
+.Update-menuItem {
+  margin-left: 20px;
+
+}

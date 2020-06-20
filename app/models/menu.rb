@@ -4,4 +4,14 @@ class Menu < ApplicationRecord
   def self.Standard
     all.find { |menu| menu.Standard == true }
   end
+
+  def self.resetID()
+    @id = 0
+    nil
+  end
+
+  def self.getID()
+    @id += 1
+    @id
+  end
 end

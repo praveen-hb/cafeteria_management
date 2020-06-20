@@ -4,7 +4,7 @@
     <ul>
       <% @menu_items.each do |item| %>
         <li class="Menu-item">
-          <p class="Menu-itemId"> <%= item.id%> </p>
+          <%#<p class="Menu-itemId"> <%= item.id%> <%#</p>%>
           <p class= "MenuItem-name"> <%= item.name%> </p>
           <p class= "MenuItem-price"> <%= item.price%> </p>
           <%= image_submit_tag "/edit.png", class: "MenuItem-edit" ,onclick:"location.href='/menu_items/#{item.id}/edit'"%>

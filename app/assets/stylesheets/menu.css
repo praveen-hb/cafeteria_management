@@ -51,11 +51,13 @@
   margin-right: 10px;
   font-size: 16px;
 }
+
 .Menu-name {
   border: none;
   background-color: inherit;
-  font-size: 16px;
+  font-size: 20px;
 }
+
 .ChangeStadard-menu {
   display: flex;
   margin-top: 10px;
@@ -78,12 +80,22 @@
 .Current-text{
   margin-left: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.Edit-title{
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 30px;
+  font-style: oblique;
+  margin-bottom: 10px;
 }
 
 .edit-details {
-  margin-top: 20px;
+  margin-top: 30px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 30px;
   font-style: oblique;
   margin-bottom: 10px;
 }

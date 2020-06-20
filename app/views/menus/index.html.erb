@@ -4,7 +4,7 @@
     <ul>
       <% Menu.all.order(:id).each do |menu|%>
         <li class="Menu-type">
-          <h2 class="Menu-id"> <%= menu.id%>.
+          <%#<h2 class="Menu-id"> <%= menu.id%>
           <%= submit_tag  menu.name,class: "Menu-name",onclick: "location.href='/menus/#{menu.id}'" %></h2>
           <%= image_submit_tag "/edit.png", class: "Menu-edit" ,onclick:"location.href='/menus/#{menu.id}/edit'"%>
           <%= form_with(url: "/menus/#{menu.id}", method: "DELETE") do %>

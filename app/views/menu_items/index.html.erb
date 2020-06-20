@@ -26,9 +26,4 @@
       <% end %>
     </ul>
   </section>
-  <% if @role=="owner"%>
-    <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/admin'"%>
-  <%elsif @role=="clerk"%>
-    <%= submit_tag "Go Back", class: "MenuItem-back" ,onclick:"location.href='/clerk'"%>
-  <% end %>
 </main>

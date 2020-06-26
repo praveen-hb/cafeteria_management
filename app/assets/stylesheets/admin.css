@@ -32,11 +32,12 @@
 }
 
 .Pending-orders {
-  margin-left: 60px;
+  height: 30px;
 }
 
 .Clerk-order {
-  margin-left: 120px;
+  margin-left: 100px;
+  height:30px;
 }
 
 .Admin-option {
@@ -109,4 +110,12 @@
   font-weight: 300;
   font-size: 30px;
 
+}
+
+.Clerk-home {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 150px;
+  width: auto;
 }

@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
       value: params[:value].to_i,
     )
     new_order.save!
+    flash[:notice] = "Order placed successfully"
     redirect_to "/order_items/#{new_order.id}/edit"
   end
 

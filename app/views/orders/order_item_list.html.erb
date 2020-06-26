@@ -29,5 +29,10 @@
       </li>
     <% end %>
   </table>
-  <p class="Cart-total">  Total Order value:  <%= Order.find(@id).value%> <p>
+  <p class="Cart-total">  Total Order value:  <%= Order.find(@id).value%> </p>
+  <% if Order.find(@id).delivered_at%>
+    <p class="Order-dtae">Delivered on: <%= Order.find(@id).date%></p>
+  <% else %>
+    <p class="Order-dtae">Order not Delivered </p>
+  <% end %>
 </section>
